@@ -28,7 +28,7 @@ nuestra aplicación.
 Cuando elegimos una de estas tecnologías no solo importamos un pedacito de
 código para reusarlo (lo cuál es un gran valor per se), si no que adoptamos una
 **arquitectura**, una serie de **principios de diseño**, un **paradigma**, unas
-**abstracciones**, un **vocabulario**, una **comunidad**, etc...
+**abstracciones**, un **vocabulario**, una **comunidad**, etc.
 
 Como desarrolladora Front-end, estos kits de desarrollo pueden resultarte
 de gran ayuda para implementar rápidamente características de los proyectos en
