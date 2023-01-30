@@ -116,7 +116,17 @@ const Products = () => {
       setDb(newData);
     };
 
-    const deleteData = (id) => {};
+    const deleteData = (id) => {
+      let isDelete = window.confirm(
+        `¿Estás seguro de eliminar el producto con el id '${id}'?`
+      );
+      if(isDelete){
+        let newData = db.filter(el => el.id !== id);
+        setDb(newData);
+      } else {
+        return;
+      }
+    };
 
     return (
         <div>
