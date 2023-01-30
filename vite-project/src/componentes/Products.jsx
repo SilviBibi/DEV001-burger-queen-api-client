@@ -103,16 +103,20 @@ const initialDb = [
 
 const Products = () => {
     const [db, setDb] = useState (initialDb);
-    const [dataToEdit, setDataToEdit] = useState(null);
+    const [dataToEdit, setDataToEdit] = useState(undefined);
 
-    const createData = (data) => {};
+    const createData = (data) => {
+      data.id = Date.now();
+      // console.log(data)
+      setDb([...db, data])
+    };
 
     const updateData = (data) => {};
 
-    const deleteData = (data) => {};
+    const deleteData = (id) => {};
 
     return (
-        <>
+        <div>
             <h1> Productos </h1>
             <Form 
              createData={createData} 
@@ -125,8 +129,8 @@ const Products = () => {
              setDataToEdit={setDataToEdit}
              deleteData={deleteData} 
             />
-        </>
+        </div>
     );
-}
+};
 
 export default Products;

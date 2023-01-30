@@ -2,19 +2,19 @@ import React from "react";
 import { useState, useEffect } from "react";
 
 const initialForm = {
-    id: null,
+    id: undefined,
     name: "",
-    price: null,
+    price: undefined,
     image: "",
     type: "",
     dateEntry: ""
 };
 
-const Form = (createData, updateData, dateToEdit, setDataToEdit) => {
-    const [form, setform] = useState({});
+const Form = ({createData, updateData, dataToEdit, setDataToEdit}) => {
+    const [form, setForm] = useState({});
 
     const handleChange = (e) => {
-        setform({
+        setForm({
             ...form,
             [e.target.name]: e.target.value,
         });
@@ -23,12 +23,12 @@ const Form = (createData, updateData, dateToEdit, setDataToEdit) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if(!form.id || !form.name ||!form.price || !form.type){
+        if(!form.name ||!form.price || !form.type){
             alert("Datos incompletos");
             return;
-        }
+        } 
 
-        if(form.id === null){
+        if(form.id === undefined){
             createData(form);
         } else {
             updateData(form)
@@ -37,7 +37,8 @@ const Form = (createData, updateData, dateToEdit, setDataToEdit) => {
     };
 
     const handleReset = (e) => {
-        setform(initialForm)
+        setForm(initialForm);
+        setDataToEdit(undefined);
     };
 
     return (
