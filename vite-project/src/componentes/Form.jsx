@@ -11,7 +11,15 @@ const initialForm = {
 };
 
 const Form = ({createData, updateData, dataToEdit, setDataToEdit}) => {
-    const [form, setForm] = useState({});
+    const [form, setForm] = useState(initialForm);
+
+    useEffect(() => {
+        if(dataToEdit){
+            setForm(dataToEdit)
+        } else {
+            setForm(initialForm)
+        }
+    }, [dataToEdit]);
 
     const handleChange = (e) => {
         setForm({
@@ -43,7 +51,7 @@ const Form = ({createData, updateData, dataToEdit, setDataToEdit}) => {
 
     return (
         <div>
-            <h3> Crear Productos </h3>
+            <h3>{dataToEdit ? "Editar Productos":"Crear Productos"}</h3>
             <form onSubmit={handleSubmit}>
                 <input type= "text" name="id" placeholder="Id del producto" onChange={handleChange} value={form.id}/>
                 <input type= "text" name="name" placeholder="Nombre del producto" onChange={handleChange} value={form.name}/>
@@ -51,7 +59,7 @@ const Form = ({createData, updateData, dataToEdit, setDataToEdit}) => {
                 <input type= "text" name="image" placeholder="Foto del producto" onChange={handleChange} value={form.image}/>
                 <input type= "text" name="type" placeholder="Tipo de producto" onChange={handleChange} value={form.type}/>
                 <input type= "text" name="dateEntry" placeholder="Fecha de entrada" onChange={handleChange} value={form.dateEntry}/>
-                <input type= "submit" value= "Crear"/>
+                <input type= "submit" value={dataToEdit ? "Editar":"Crear"}/>
                 <input type= "reset" value= "Limpiar" onClick={handleReset}/>
 
             </form>
