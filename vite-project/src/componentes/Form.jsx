@@ -1,11 +1,45 @@
 import React from "react";
 import { useState, useEffect } from "react";
 
-const Form = () => {
+const initialForm = {
+    id: null,
+    name: "",
+    price: null,
+    image: "",
+    type: "",
+    dateEntry: ""
+};
+
+const Form = (createData, updateData, dateToEdit, setDataToEdit) => {
     const [form, setform] = useState({});
-    const handleChange = (e) => {};
-    const handleSubmit = (e) => {};
-    const handleReset = (e) => {};
+
+    const handleChange = (e) => {
+        setform({
+            ...form,
+            [e.target.name]: e.target.value,
+        });
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        if(!form.id || !form.name ||!form.price || !form.type){
+            alert("Datos incompletos");
+            return;
+        }
+
+        if(form.id === null){
+            createData(form);
+        } else {
+            updateData(form)
+        }
+        handleReset();
+    };
+
+    const handleReset = (e) => {
+        setform(initialForm)
+    };
+
     return (
         <div>
             <h3> Crear Productos </h3>
