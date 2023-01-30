@@ -1,7 +1,7 @@
 import React from "react";
 import TableRow from "./TableRow";
 
-const Table = ({data}) => {
+const Table = ({data, setDataToEdit, deleteData}) => {
     return (
         <div>
             <h3> Tabla de Productos </h3>
@@ -18,8 +18,20 @@ const Table = ({data}) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {data.length === 0 ? <tr><td colSpan = "6">Sin datos</td></tr>:data.map(el =>
-                        <TableRow key={el.id} el={el}/>)}
+                    {data.length === 0 ? (
+                        <tr>
+                            <td colSpan = "6">Sin datos</td>
+                        </tr>
+                    ):(
+                        data.map(el => (
+                        <TableRow 
+                        key={el.id} 
+                        el={el} 
+                        setDataToEdit={setDataToEdit}
+                        deleteData={deleteData}
+                        />
+                        ))
+                    )}
                 </tbody>
 
             </table>
