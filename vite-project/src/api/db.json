@@ -97,34 +97,7 @@
       "dateEntry": ""
     }
   ],
-  "orders": [
-    {
-      "id": "1",
-      "userId": "",
-      "client": "Silvia Falcon",
-      "products": [
-        {
-          "products": {
-            "qty": 2,
-            "products": {
-              "product": "Café Americano"
-            }
-          }
-        },
-        {
-          "products": {
-            "qty": 2,
-            "products": {
-              "product": "Sandwich con Jamón y Queso"
-            }
-          }
-        }
-      ],
-      "status": "",
-      "dateEntry": "2023",
-      "dateProcessed": ""
-    }
-  ],
+  "orders": [],
   "users": [
     {
       "id": "1",
@@ -134,7 +107,6 @@
       "roles": {
         "admin": true
       }
-
     },
     {
       "id": "2",
@@ -144,7 +116,6 @@
       "roles": {
         "admin": false
       }
-
     }
   ]
 }
