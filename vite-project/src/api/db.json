@@ -102,9 +102,17 @@
     {
       "id": "1",
       "email": "valeria.murguia.g@gmail.com",
-      "password": "0123456",
+      "password": "124bd1296bec0d9d93c7b52a71ad8d5b",
       "roles": {
         "admin": true
+      }
+    },
+    {
+      "id": "2",
+      "email": "silvi09_24@hotmail.com",
+      "password": "ac6a06cc44d5180a1c243a2a541b10b0",
+      "roles": {
+        "admin": false
       }
     }
   ]

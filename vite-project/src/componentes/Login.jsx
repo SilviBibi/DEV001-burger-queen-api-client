@@ -1,42 +1,22 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Login = () => {
-    const[mail, mailUpdate]= useState('');
-    const[password, passwordUpdate]= useState('');
-    const [usersDb, usersDbUpdate] = useState(undefined);
+    const [data, setData] = useState({
+        email : "",
+        password : ""
+    });
 
-    const ProceedLogin = (e) => {
+    const handleChange = (e) => {
         e.preventDefault();
-        if(validate()){
-        // console.log('Procede')
-        fetch("http://localhost:5000/users")
-        .then((res) => {
-            usersDbUpdate(res)
-            if(usersDbUpdate.includes(mailUpdate)){
-                console.log('Correo encontrado en bd.')
-            } else {
-                console.log('Correo no encontrado en bd.')
-            }
-        })
-        }
-    }
-
-    const validate = () => {
-        let result = true;
-        if(mail === '' || mail === null){
-            result = false;
-            alert('Por favor ingrese un correo válido.')
-        }
-        if(password === '' || password === null){
-            result = false;
-            alert('Por favor ingrese una contraseña válida.')
-        }
-        return result;
+        const updateEmail = document.getElementById("email").value;
+        const updatePassword = document.getElementById("password").value;
+        console.log(updateEmail, updatePassword)
     }
     return (
         <div className="row">
             <div className="container-login">
-                <form onSubmit={ProceedLogin}>
+                <form onSubmit={handleChange}>
                     <div>
                         <div>
                             <h2>INICIAR SESIÓN</h2>
@@ -44,17 +24,19 @@ const Login = () => {
                         <div>
                             <div>
                                 <label>CORREO ELECTRÓNICO</label>
-                                <input type="email" placeholder="INGRESA TU MAIL:" value={mail} onChange={e=>mailUpdate(e.target.value)} ></input>
+                                <input type="email" placeholder="INGRESA TU MAIL:" id="email" onChange={(e) => setData({...data, email: e.target.value})} ></input>
                             </div>
                             {/* <div>
                                 <img src={logo} alt="burger-queen-logo" />
                             </div> */}
                             <div>
-                                <label>CONTRASEÑA</label> 
-                                <input type="password" placeholder="INGRESA TU CONTRASEÑA:" value={password} onChange={e=>passwordUpdate(e.target.value)} ></input>
+                                <label>CONTRASEÑA</label>
+                                <input type="password" placeholder="INGRESA TU CONTRASEÑA:" id="password" onChange={(e) => setData({...data, password: e.target.value})} ></input>
                             </div>
                             <div>
-                                <button type="submit">INICIAR SESIÓN</button>
+                                <Link to={'/products'}>
+                                    <button type="submit">INICIAR SESIÓN</button>
+                                </Link>
                             </div>
                         </div>
                     </div>
