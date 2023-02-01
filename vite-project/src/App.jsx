@@ -1,10 +1,12 @@
 import React from "react";
+import Login from "./componentes/Login"
 import Products from "./componentes/Products";
 
 export function App() {
   return (
     <>
-      <h1>Burger queen API client</h1>
+      <h1>Burger Queen</h1>
+      <Login/>
       <Products/>
     </>
   )
