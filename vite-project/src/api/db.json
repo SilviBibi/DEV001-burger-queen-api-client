@@ -101,20 +101,10 @@
   "users": [
     {
       "id": "1",
-      "email": {
-        "email": "vale@gmail.com"
-      },
+      "email": "valeria.murguia.g@gmail.com",
+      "password": "0123456",
       "roles": {
         "admin": true
-      }
-    },
-    {
-      "id": "2",
-      "email": {
-        "email": "silvi@gmail.com"
-      },
-      "roles": {
-        "admin": false
       }
     }
   ]
