@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import logo from '../../public/Img/logo-black.png'
+import logo from '../../public/Img/logo-white.png';
+import background from '../../public/Img/background-chefs2.png';
 import './Login.css'
 
 const Login = () => {
@@ -31,7 +32,7 @@ const Login = () => {
             .then(resp => resp.ok ? resp.json() : Promise.reject({ err: true }))
             .then(resp => {
                 if (!resp.err) {
-                    navigate("/products")
+                    navigate("/waiter")
                 }
             })
             .catch((err) => {
@@ -40,30 +41,26 @@ const Login = () => {
 
     };
     return (
-        <section className="Login">
+        <section className="login">
+            <img src={background} alt="background-chefs" className="background-chefs" />
             <div className="container-login">
                 <form onSubmit={handleChange}>
-                    <div>
-                        <div>
-                            <h2>INICIAR SESIÓN</h2>
+                    <div className="container-info">
+                        <h2 className="title">INICIAR SESIÓN</h2>
+                        <div className="div-line"></div>
+                        <div className="email-info">
+                            <label>CORREO ELECTRÓNICO</label>
+                            <input className="login-placeholder" type="email" placeholder="INGRESA TU MAIL:" id="email" onChange={(e) => setData({ ...data, email: e.target.value })} ></input>
+                        </div>
+                        <picture className="logo-info">
+                            <img src={logo} alt="burger-queen-logo" className="logo" />
+                        </picture>
+                        <div className="password-info">
+                            <label>CONTRASEÑA</label>
+                            <input className="login-placeholder" type="password" placeholder="INGRESA TU CONTRASEÑA:" id="password" onChange={(e) => setData({ ...data, password: e.target.value })} ></input>
                         </div>
                         <div>
-                            <div>
-                                <label>CORREO ELECTRÓNICO</label>
-                                <input type="email" placeholder="INGRESA TU MAIL:" id="email" onChange={(e) => setData({ ...data, email: e.target.value })} ></input>
-                            </div>
-                            <picture>
-                                <img src={logo} alt="burger-queen-logo" className="logo" />
-                            </picture>
-                            <div>
-                                <label>CONTRASEÑA</label>
-                                <input type="password" placeholder="INGRESA TU CONTRASEÑA:" id="password" onChange={(e) => setData({ ...data, password: e.target.value })} ></input>
-                            </div>
-                            <div>
-
-                                <button type="submit">INICIAR SESIÓN</button>
-
-                            </div>
+                            <button type="submit" class="btn-login">INICIAR SESIÓN</button>
                         </div>
                     </div>
                 </form>

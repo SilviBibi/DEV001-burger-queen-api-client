@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+.waiter {
+    height: 1170px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.background-burger {
+    position: absolute;
+    height: 1200px;
+}
+
+.btn-container {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    z-index: 2;
+    gap: 150px;
+}
+
+.btn-menu {
+    display: flex;
+    width: 300px;
+    height: 75px;
+    background-color: #242121;
+    border: none;
+    font-size: 29px;
+    color: #FFFFFF;
+    font-family: 'Staatliches', cursive;
+    z-index: 3;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    margin-top: -100px;
+}

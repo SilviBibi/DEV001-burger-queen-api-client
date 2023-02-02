@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
 .logo {
     width: 140px;
 }
@@ -7,11 +9,88 @@ body{
     padding: 0;
 }
 
-.Login {
-    height: 1000px;
-    background-image: url('../../public/Img/background-chefs.png');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
+.login {
+    height: 1170px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background-chefs {
+    position: absolute;
+    height: 1200px;
+}
+
+.container-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 590px;
+    width: 400px;
+    background-color: #242121;
+    border-radius: 25px;
+    padding: 25px;
+    z-index: 2;
+    color: #D9D9D9;
+    font-family: 'Staatliches', cursive;
+    letter-spacing: 1px;
+}
+
+.container-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.title {
+    font-size: 30px;
+    font-size: 30px;
+    margin-top: -7px;
+}
+
+.div-line {
+    background-color: #D9D9D9;
+    height: 2px;
+    width: 110%;
+    margin-top: -20px;
+    margin-bottom: 20px;
+}
+
+.btn-login {
+    width: 365px;
+    height: 45px;
+    background-color: #FA7F4B;
+    border: none;
+    border-radius: 15px;
+    font-size: 24px;
+    color: #D9D9D9;
+    font-family: 'Staatliches', cursive;
+}
+
+.email-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 24px;
+    gap: 15px;
+}
+
+.password-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 24px;
+    gap: 15px;
+}
+
+.login-placeholder {
+    width: 365px;
+    height: 45px;
+    border: none;
+    border-radius: 15px;
+    font-size: 24px;
+    color: #776D6D;
+    font-family: 'Staatliches', cursive;
+    background-color: #D9D9D9;
 }
