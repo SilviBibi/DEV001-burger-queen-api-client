@@ -4,6 +4,7 @@ import Table from "./Table";
 import { helpHttp } from "../helpers/helpHttp";
 import Loader from "./Loader";
 import Message from "./Message";
+import './Products.css';
 
 const Products = () => {
   const [db, setDb] = useState(undefined);

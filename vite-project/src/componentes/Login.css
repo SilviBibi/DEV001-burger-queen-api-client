@@ -1,3 +1,17 @@
 .logo {
     width: 140px;
 }
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.Login {
+    height: 1000px;
+    background-image: url('../../public/Img/background-chefs.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
