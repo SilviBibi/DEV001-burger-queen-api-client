@@ -114,6 +114,71 @@
       "roles": {
         "admin": false
       }
+    },
+    {
+      "email": "valeria.murguia.g@gmail.com",
+      "password": "0123456",
+      "id": "9zzV-ei"
+    },
+    {
+      "email": "valeria.murguia.g@gmail.com",
+      "password": "0123456",
+      "id": "uvWFbv0"
+    },
+    {
+      "email": "valeria.murguia.g@gmail.com",
+      "password": "0123456",
+      "id": "D1G-152"
+    },
+    {
+      "email": "valeria.murguia.g@gmail.com",
+      "password": "0123456",
+      "id": "VOwR_GB"
+    },
+    {
+      "email": "valeria.murguia.g@gmail.com",
+      "password": "0123456",
+      "id": "l5I49j0"
+    },
+    {
+      "email": "valeruguia.g@gmail.com",
+      "password": "01234",
+      "id": "49WOUW2"
+    },
+    {
+      "email": "prueba@gmail.com",
+      "password": "$2a$10$EKLOITSXBkDW5KH5H/Cd0eM1rI5N/EeZ01dtBhpiqoas68dvBnKTG",
+      "id": "8EwTAhq"
+    },
+    {
+      "email": "admin@gmail.com",
+      "password": "$2a$10$cgD/r0JcyuC9OXBHN5t7quKhIp8De7J8E3BTlGAze3YO7tUVBagMC",
+      "roles": {
+        "admin": true,
+        "chef": false,
+        "weater": false
+      },
+      "id": "tLVrKob"
+    },
+    {
+      "email": "admin1@gmail.com",
+      "password": "$2a$10$BXm1930cONHbcSPFS4S1veAvVDMlRzJRF7.0j7QcTJGYFc7F0NJR6",
+      "roles": {
+        "admin": true,
+        "chef": false,
+        "waiter": false
+      },
+      "id": "aDZ78m6"
+    },
+    {
+      "email": "test@gmail.com",
+      "password": "$2a$10$075MaYAnDf5y/jjOfeV1n.jmEkqBUw70PrQcCv12xffv2eWhUaAim",
+      "roles": {
+        "admin": true,
+        "chef": false,
+        "waiter": false
+      },
+      "id": "iKSvW8K"
     }
   ]
 }

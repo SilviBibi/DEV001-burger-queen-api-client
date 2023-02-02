@@ -7,11 +7,13 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "fake-api": "json-server --watch vite-project/src/api/db.json --port 5000"
+    "fake-api": "json-server --watch vite-project/src/api/db.json --port 5000",
+    "auth-api": "json-server-auth vite-project/src/api/db.json --port 3004"
   },
   "dependencies": {
     "bootstrap": "^5.2.3",
     "json-server": "^0.17.1",
+    "json-server-auth": "^2.1.0",
     "md5": "^2.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
