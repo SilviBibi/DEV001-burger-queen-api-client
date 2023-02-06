@@ -60,7 +60,7 @@ const Login = () => {
                             <input className="login-placeholder" type="password" placeholder="INGRESA TU CONTRASEÑA:" id="password" onChange={(e) => setData({ ...data, password: e.target.value })} ></input>
                         </div>
                         <div>
-                            <button type="submit" class="btn-login">INICIAR SESIÓN</button>
+                            <button type="submit" className="btn-login">INICIAR SESIÓN</button>
                         </div>
                     </div>
                 </form>
