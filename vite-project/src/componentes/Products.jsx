@@ -96,7 +96,7 @@ const Products = () => {
   };
 
   return (
-    <div>
+    <>
       <h1> Productos </h1>
       <Form
         createData={createData}
@@ -117,7 +117,7 @@ const Products = () => {
         setDataToEdit={setDataToEdit}
         deleteData={deleteData}
       />}
-    </div>
+    </>
   );
 };
 
