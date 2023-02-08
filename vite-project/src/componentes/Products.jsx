@@ -4,6 +4,8 @@ import Table from "./Table";
 import { helpHttp } from "../helpers/helpHttp";
 import Loader from "./Loader";
 import Message from "./Message";
+import logo from '../../public/Img/logo-white.png';
+import menuIcon from '../../public/Img/menu-icon.png';
 import './Products.css';
 
 const Products = () => {
@@ -96,28 +98,35 @@ const Products = () => {
   };
 
   return (
-    <>
-      <h1> Productos </h1>
-      <Form
-        createData={createData}
-        updateData={updateData}
-        dataToEdit={dataToEdit}
-        setDataToEdit={setDataToEdit}
-      />
-      {loading && <Loader />}
-      {error && (
-        <Message
-          msg={`Error ${error.status}: ${error.statusText}`}
-          bgColor="#dc3545"
+    <section className="products">
+      <div className="products-elements">
+        <img src={logo} alt="bq-logo" className="bq-logo" />
+        <img src={menuIcon} alt="menu-icon" className="menu-icon" />
+        <div className="btns-container">
+          <button className="btn-products">Productos</button>
+          <button className="btn-users">Usuarios</button>
+        </div>
+        <Form
+          createData={createData}
+          updateData={updateData}
+          dataToEdit={dataToEdit}
+          setDataToEdit={setDataToEdit}
         />
-      )}
+        {loading && <Loader />}
+        {error && (
+          <Message
+            msg={`Error ${error.status}: ${error.statusText}`}
+            bgColor="#dc3545"
+          />
+        )}
 
-      {db && <Table
-        data={db}
-        setDataToEdit={setDataToEdit}
-        deleteData={deleteData}
-      />}
-    </>
+        {db && <Table
+          data={db}
+          setDataToEdit={setDataToEdit}
+          deleteData={deleteData}
+        />}
+      </div>
+    </section>
   );
 };
 

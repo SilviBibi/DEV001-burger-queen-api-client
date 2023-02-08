@@ -50,8 +50,8 @@ const Form = ({createData, updateData, dataToEdit, setDataToEdit}) => {
     };
 
     return (
-        <div>
-            <h3>{dataToEdit ? "Editar Productos":"Crear Productos"}</h3>
+        <>
+            <h3 className="crear-productos">{dataToEdit ? "Editar Productos":"Crear Productos"}</h3>
             <form onSubmit={handleSubmit}>
                 <input type= "text" name="id" placeholder="Id del producto" onChange={handleChange} value={form.id}/>
                 <input type= "text" name="name" placeholder="Nombre del producto" onChange={handleChange} value={form.name}/>
@@ -63,7 +63,7 @@ const Form = ({createData, updateData, dataToEdit, setDataToEdit}) => {
                 <input type= "reset" value= "Limpiar" onClick={handleReset}/>
 
             </form>
-        </div>
+        </>
     );
 }
 

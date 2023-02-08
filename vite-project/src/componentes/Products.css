@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope&display=swap');
+
+.products {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../../public/Img/background-chefs2.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+.background-chefs {
+    position: absolute;
+    height: 1200px;
+    z-index: 1;
+}
+
+.products-elements {
+    z-index: 3;
+    font-family: 'Manrope', sans-serif;
+}
+
+.menu-icon {
+    width: 15%;
+    float: right;
+}
+
+.btn-products {
+    width: 235px;
+    height: 50px;
+    background-color: #FA7F4B;
+    border: none;
+    border-radius: 35px;
+    font-size: 20px;
+    color: #FFF;
+    font-weight: 600;
+    margin-right: -40px;
+    z-index: 4;
+}
+
+.btn-users {
+    width: 235px;
+    height: 50px;
+    background-color: #FFBA7F;
+    border: none;
+    border-radius: 35px;
+    font-size: 20px;
+    color: #FFF;
+    font-weight: 600;
+}
+
+.btns-container {
+    display: flex;
+    justify-content:center;
+}
+
+.crear-productos {
+    color: #FFF;
+    margin-left: 80px;
+}
