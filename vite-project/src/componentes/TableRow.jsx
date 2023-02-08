@@ -8,7 +8,7 @@ const TableRow = ({ el, setDataToEdit, deleteData }) => {
                 <td>{id}</td>
                 <td>{name}</td>
                 <td>{price}</td>
-                <td>{url}</td>
+                <td><img src={url} className='productImg'></img></td>
                 <td>{type}</td>
                 <td>{dateEntry}</td>
                 <td>
