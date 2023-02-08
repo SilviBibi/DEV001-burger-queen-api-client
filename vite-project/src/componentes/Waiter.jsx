@@ -12,7 +12,6 @@ const Waiter = () => {
                     <Link to="/desayunos" className="btn-menu">DESAYUNOS</Link>
                     <Link to="/comidas" className="btn-menu">HAMBURGUESA Y ACOMPAÑAMIENTOS</Link>
                     <Link to="/bebidas" className="btn-menu">BEBIDAS</Link>
-                    <Link to="/products" className="btn-menu">ADMIN</Link>
                 </div>
            </section>
         </>

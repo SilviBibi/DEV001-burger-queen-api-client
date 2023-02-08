@@ -1,0 +1,38 @@
+.desayunos {
+    width: 100%;
+    height: 1170px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.background-coffe {
+    position: absolute;
+    height: 1200px;
+    z-index: 1;
+    /* background-attachment: fixed; */
+}
+
+.menu-desayunos {
+    width: 60%;
+    z-index: 3;
+}
+
+.ordenes{
+    margin-top: -1150px;
+    width: 25%;
+    height: 100%;
+    background-color: #242121;
+    opacity: 30%;
+    z-index: 3;
+    margin-left: 1035px;
+}
+
+.imagenes{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 14px;
+    align-items: center;
+}
