@@ -32,7 +32,15 @@ const Login = () => {
             .then(resp => resp.ok ? resp.json() : Promise.reject({ err: true }))
             .then(resp => {
                 if (!resp.err) {
-                    navigate("/waiter")
+                    if(resp.user.roles.admin===true){
+                        navigate("/products")
+                    }else  if(resp.user.roles.waiter===true){
+                        navigate("/waiter")
+                    }else{
+                         navigate("/chef")
+                    }
+
+                    
                 }
             })
             .catch((err) => {

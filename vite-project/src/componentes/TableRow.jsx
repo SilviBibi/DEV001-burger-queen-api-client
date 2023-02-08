@@ -1,14 +1,14 @@
 import React from "react";
 
 const TableRow = ({ el, setDataToEdit, deleteData }) => {
-    let { id, name, price, image, type, dateEntry } = el;
+    let { id, name, price, url, type, dateEntry } = el;
     return (
         <>
             <tr>
                 <td>{id}</td>
                 <td>{name}</td>
                 <td>{price}</td>
-                <td>{image}</td>
+                <td>{url}</td>
                 <td>{type}</td>
                 <td>{dateEntry}</td>
                 <td>
