@@ -3,8 +3,9 @@ import AddCartBtn from './AddCartBtn'
 import './Cards.css'
 
 const Prueba2 = ({ product }) => {
-    let { id, name, price, url } = product;
-    return (
+    let { id, name, price, url, type } = product;
+    if(product.type === 'desayuno' || product.type === 'Desayuno'){
+        return (
             <div className='Cards'>
                 <img src={url} className='productImg'></img>
                 <h2 className='productName'>{name}</h2>
@@ -13,7 +14,8 @@ const Prueba2 = ({ product }) => {
                     <AddCartBtn />
                 </div>
         </div>
-    );
+        );
+    }
 }
 
 //   return (
