@@ -3,12 +3,11 @@ import TableRow from "./TableRow";
 
 const Table = ({ data, setDataToEdit, deleteData }) => {
     return (
-        <div>
-            <h3> Tabla de Productos </h3>
+        <div className="table2">
+            <h3 className="table-title"> Tabla de Productos </h3>
             <table>
                 <thead>
-                    <tr>
-                        <th>Id</th>
+                    <tr className="table-head">
                         <th>Nombre</th>
                         <th>Precio</th>
                         <th>Imagen</th>
@@ -17,7 +16,7 @@ const Table = ({ data, setDataToEdit, deleteData }) => {
                         <th>Acciones</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody className="table-body">
                     {data.length > 0 ? (
                         data.map(el => (
                             <TableRow
@@ -29,7 +28,7 @@ const Table = ({ data, setDataToEdit, deleteData }) => {
                         ))
                     ) : (
                         <tr>
-                            <td colSpan="6">Sin datos</td>
+                            <td colSpan="5">Sin datos</td>
                         </tr>
                     )}
                 </tbody>

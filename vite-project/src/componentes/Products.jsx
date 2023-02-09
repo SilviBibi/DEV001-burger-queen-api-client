@@ -100,7 +100,7 @@ const Products = () => {
   return (
     <section className="products">
       <div className="products-elements">
-        <img src={logo} alt="bq-logo" className="bq-logo" />
+        <img src={logo} alt="bq-logo" className="bq-logo2" />
         <img src={menuIcon} alt="menu-icon" className="menu-icon" />
         <div className="btns-container">
           <button className="btn-products">Productos</button>

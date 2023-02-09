@@ -5,15 +5,14 @@ const TableRow = ({ el, setDataToEdit, deleteData }) => {
     return (
         <>
             <tr>
-                <td>{id}</td>
                 <td>{name}</td>
                 <td>{price}</td>
-                <td><img src={url} className='productImg'></img></td>
+                <td><img src={url} className='productImg2'></img></td>
                 <td>{type}</td>
                 <td>{dateEntry}</td>
                 <td>
-                    <button onClick={() => setDataToEdit(el)}>Editar</button>
-                    <button onClick={() => deleteData(id)}>Eliminar</button>
+                    <button className="btn-edit" onClick={() => setDataToEdit(el)}>Editar</button>
+                    <button className="btn-delete" onClick={() => deleteData(id)}>Eliminar</button>
                 </td>
             </tr>
         </>
