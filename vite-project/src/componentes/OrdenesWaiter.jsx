@@ -10,6 +10,10 @@ import menuIcon from '../../public/Img/menu-icon.png';
 import './OrdenesWaiter.css';
 
 const OrdenesWaiter = ({ el, setDataToEdit, deleteData }) => {
+  // 1. Agregar un evento al btn-agregar que cree id de la orden (metodo date now), id mesero,  nombre del cliente, {productos } cantidad, nombre del producto, precio, status, fecha de creación de pedido
+  // 2. Darle lógica a botón - y + nota: inverstigar useContext y createContext
+  // 3.
+
   let { idOrder, userId, client, products, status, dateEntry, dateProcessed } = el;
   const [db, setDb] = useState(undefined);
   const [dataToEdit, setDataToEdit] = useState(undefined);
@@ -99,38 +103,38 @@ const OrdenesWaiter = ({ el, setDataToEdit, deleteData }) => {
     }
   };
 
-  return (
-    <>
-      <section className="products">
-        <div className="products-elements">
-          <img src={logo} alt="bq-logo" className="bq-logo2" />
-          <img src={menuIcon} alt="menu-icon" className="menu-icon" />
-          <div className="btns-container">
-            <Link to="/OrdenesWaiter" className="btn-products">Productos</Link>
-            <Link to="/adminUsers" className="btn-users">Usuarios</Link>
-          </div>
-          <Form
-            createData={createData}
-            updateData={updateData}
-            dataToEdit={dataToEdit}
-            setDataToEdit={setDataToEdit}
-          />
-          {loading && <Loader />}
-          {error && (
-            <Message
-              msg={`Error ${error.status}: ${error.statusText}`}
-              bgColor="#dc3545"
-            />
-          )}
+  // return (
+  //   <>
+  //     <section className="products">
+  //       <div className="products-elements">
+  //         <img src={logo} alt="bq-logo" className="bq-logo2" />
+  //         <img src={menuIcon} alt="menu-icon" className="menu-icon" />
+  //         <div className="btns-container">
+  //           <Link to="/OrdenesWaiter" className="btn-products">Productos</Link>
+  //           <Link to="/adminUsers" className="btn-users">Usuarios</Link>
+  //         </div>
+  //         <Form
+  //           createData={createData}
+  //           updateData={updateData}
+  //           dataToEdit={dataToEdit}
+  //           setDataToEdit={setDataToEdit}
+  //         />
+  //         {loading && <Loader />}
+  //         {error && (
+  //           <Message
+  //             msg={`Error ${error.status}: ${error.statusText}`}
+  //             bgColor="#dc3545"
+  //           />
+  //         )}
 
-          {db && <Table
-            data={db}
-            setDataToEdit={setDataToEdit}
-            deleteData={deleteData}
-          />}
-        </div>
-      </section>
-    </>
-  )
+  //         {db && <Table
+  //           data={db}
+  //           setDataToEdit={setDataToEdit}
+  //           deleteData={deleteData}
+  //         />}
+  //       </div>
+  //     </section>
+  //   </>
+  // )
 };
 export default OrdenesWaiter;
