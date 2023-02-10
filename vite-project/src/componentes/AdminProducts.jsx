@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Form from "./Form";
 import Table from "./Table";
 import { helpHttp } from "../helpers/helpHttp";
@@ -6,9 +7,9 @@ import Loader from "./Loader";
 import Message from "./Message";
 import logo from '../../public/Img/logo-white.png';
 import menuIcon from '../../public/Img/menu-icon.png';
-import './Products.css';
+import './AdminProducts.css';
 
-const Products = () => {
+const AdminProducts = () => {
   const [db, setDb] = useState(undefined);
   const [dataToEdit, setDataToEdit] = useState(undefined);
   const [error, setError] = useState(undefined);
@@ -103,8 +104,8 @@ const Products = () => {
         <img src={logo} alt="bq-logo" className="bq-logo2" />
         <img src={menuIcon} alt="menu-icon" className="menu-icon" />
         <div className="btns-container">
-          <button className="btn-products">Productos</button>
-          <button className="btn-users">Usuarios</button>
+          <Link to="/adminProducts" className="btn-products">Productos</Link>
+          <Link to="/adminUsers" className="btn-users">Usuarios</Link>
         </div>
         <Form
           createData={createData}
@@ -130,4 +131,5 @@ const Products = () => {
   );
 };
 
-export default Products;
+
+export default AdminProducts;

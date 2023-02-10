@@ -35,6 +35,9 @@
 }
 
 .btn-products {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 235px;
     height: 50px;
     background-color: #FA7F4B;
@@ -45,9 +48,13 @@
     font-weight: 600;
     margin-right: -40px;
     z-index: 4;
+    text-decoration: none;
 }
 
 .btn-users {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 235px;
     height: 50px;
     background-color: #FFBA7F;
@@ -56,11 +63,13 @@
     font-size: 20px;
     color: #FFF;
     font-weight: 600;
+    text-decoration: none;
 }
 
 .btns-container {
     display: flex;
     justify-content: center;
+    text-align: center;
     margin-top: 15%;
 }
 

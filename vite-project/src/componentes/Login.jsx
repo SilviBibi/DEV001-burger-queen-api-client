@@ -32,9 +32,9 @@ const Login = () => {
             .then(resp => resp.ok ? resp.json() : Promise.reject({ err: true }))
             .then(resp => {
                 if (!resp.err) {
-                    if(resp.user.roles.admin===true){
-                        navigate("/products")
-                    }else  if(resp.user.roles.waiter===true){
+                    if(resp.user.roles==="admin"){
+                        navigate("/adminProducts")
+                    }else  if(resp.user.roles==="waiter"){
                         navigate("/waiter")
                     }else{
                          navigate("/chef")

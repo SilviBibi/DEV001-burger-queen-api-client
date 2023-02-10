@@ -10,6 +10,7 @@ const initialForm = {
     dateEntry: ""
 };
 
+
 const Form = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
     const [form, setForm] = useState(initialForm);
 
@@ -56,7 +57,7 @@ const Form = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
                 <form onSubmit={handleSubmit} className="form">
                     <input className="input-class" type="text" name="name" placeholder="Nombre del producto" onChange={handleChange} value={form.name} />
                     <input className="input-class" type="text" name="price" placeholder="Precio" onChange={handleChange} value={form.price} />
-                    <input className="input-class" type="text" name="image" placeholder="URL de imagen" onChange={handleChange} value={form.url} />
+                    <input className="input-class" type="text" name="url" placeholder="URL de imagen" onChange={handleChange} value={form.url} />
                     <input className="input-class" type="text" name="type" placeholder="Tipo" onChange={handleChange} value={form.type} />
                     <input className="input-class" type="text" name="dateEntry" placeholder="Fecha de entrada" onChange={handleChange} value={form.dateEntry} />
                     <input className="btn-create" type="submit" value={dataToEdit ? "Editar" : "Crear"} />
