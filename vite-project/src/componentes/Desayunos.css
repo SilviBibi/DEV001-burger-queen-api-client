@@ -25,7 +25,7 @@
 .ordenes {
     background-color: #242121;
     width: 100%;
-    min-height: 300px;
+    min-height: 350px;
     z-index: 3;
     opacity: 90%;
     margin-top: 50px;
@@ -35,6 +35,9 @@
     color: #FFF;
     font-size: 30px;
     letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .imagenes{
@@ -58,4 +61,146 @@
     font-size: 30px;
     font-family: 'Staatliches', cursive;
     letter-spacing: 1px;
+}
+
+.containerOrden{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 60px;
+    position: absolute;
+    margin-left: 50px;
+}
+.resumenOrden {
+    z-index: 3;
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+}
+.resumenOrden2 {
+    z-index: 3;
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+    margin-top: -40px;
+}
+.containerOrden-sendKitchen{
+    display: flex;
+    flex-direction: row;
+}
+.total{
+    z-index: 3;
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: -20px;
+}
+.btnSendKitchen{
+    width: 30%;
+    display: flex;
+    z-index: 3;
+    align-items: center;
+    text-decoration: none;
+    margin-left: 100px;
+    margin-top: 130px;
+}
+.btn-kitchen{
+    width: 250px;
+    height: 75px;
+    background-color: #FA7F4B;
+    border: none;
+    font-size: 29px;
+    color: #FFFFFF;
+    font-family: 'Staatliches', cursive;
+    position: absolute;
+    right: 10px;
+}
+
+.containerPedidos {
+background-color: #242121;
+width: 100%;
+min-height: 300px;
+z-index: 3;
+opacity: 90%;
+margin-top: 50px;
+bottom: 0px;
+position: absolute;
+font-family: 'Staatliches', cursive;
+color: #FFF;
+font-size: 30px;
+letter-spacing: 1px;
+display: flex;
+flex-direction: column;
+}
+.btnMas {
+    width: 40px;
+    height: 25px;
+    border: none;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px ;
+    background-color: #FA7F4B;
+    color: #FFFF;
+    font-size: 20px;
+    font-weight: 200;
+    font-family: 'Staatliches', cursive;
+    text-align: center;
+    cursor: pointer;
+    margin-right: 30px;
+}
+.btnMas:hover{
+    background-color: #242121;
+}
+.btnMenos {
+    width: 40px;
+    height: 25px;
+    border: none;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    background-color: #FA7F4B;
+    color: #FFFF;
+    font-size: 20px;
+    font-weight: 200;
+    font-family: 'Staatliches', cursive;
+    text-align: center;
+    cursor: pointer;
+}
+.btnMenos:hover{
+    background-color: #242121;
+}
+
+.counter{
+    display: flex;
+    background-color: #FFF;
+    width: 60px;
+    height: 25px;
+    color: black;
+    text-align: center;
+    justify-content: center;
+}
+.productSelected{
+    margin-right: 20px;
+}
+.delete-icon{
+    width: 30px;
+    height: 30px;
+    margin-bottom: 5px;
+}
+.price{
+    margin-right: 20px;
+}
+.input-class2 {
+    width: 31%;
+    height: 30px;
+    text-align: center;
+    border-radius: 12px;
+    font-size: 17px;
+    font-family: 'Manrope', sans-serif;
+    margin-top: -20px;
 }

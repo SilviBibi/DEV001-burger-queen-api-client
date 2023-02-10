@@ -10,7 +10,7 @@ const Home = () => {
             <img src={logo} alt="bq-logo" className="bq-logo" />
             <img src={burgerqueen} alt="bq-title" className="bq-title" />
             <img src={background} alt="background-chefs" className="background-chefs" />
-            <Link to="/login" className="btn-home">INICIAR SESIÓn</Link>
+            <Link to="/login" className="btn-home">INICIAR SESIÓN</Link>
         </section>
     );
 }
