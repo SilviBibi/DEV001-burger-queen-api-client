@@ -1,7 +1,8 @@
 import React from "react";
 import Home from "./componentes/Home";
 import Login from "./componentes/Login";
-import Products from "./componentes/Products";
+import AdminProducts from "./componentes/AdminProducts";
+import AdminUsers from "./componentes/AdminUsers";
 import Waiter from "./componentes/Waiter";
 import Chef from "./componentes/Chef"
 import Desayunos from "./componentes/Desayunos"
@@ -17,7 +18,8 @@ export function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/waiter" element={<Waiter />} />
-        <Route path="/products" element={<Products />} />
+        <Route path="/adminProducts" element={<AdminProducts />} />
+        <Route path="/adminUsers" element={<AdminUsers />} />
         <Route path="/desayunos" element={<Desayunos>
             <Cards/>
             
