@@ -11,7 +11,7 @@ const Prueba2 = ({ product }) => {
                 <h2 className='productName'>{name}</h2>
                 <div className='productDetails'>
                     <p className='price'>{price}</p>
-                    <AddCartBtn onClick={() => addToCart(id)} />
+                    <AddCartBtn />
                 </div>
         </div>
         );

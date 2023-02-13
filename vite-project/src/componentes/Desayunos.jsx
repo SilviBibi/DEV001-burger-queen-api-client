@@ -6,25 +6,11 @@ import './Desayunos.css'
 import logo from '../../public/Img/logo-white.png';
 import menuIcon from '../../public/Img/menu-icon.png';
 import deleteIcon from '../../public/Img/delete-icon.png';
-import { ShoppingInitialState, shoppingReducer } from "./ShoppingReducer";
 
 // const bd = data.products;
 // const arrObject = Object.values(bd);
 
 const Desayunos = (props) => {
-    // const [state, dispatch] = useReducer(
-    //     shoppingReducer,
-    //     ShoppingInitialState
-    // )
-
-    // const { products, cart } = state;
-
-    const addToCart = () => {};
-
-    const delFromCart = () => {};
-    
-    const clearCart = () => {};
-
     return (
         <>
             <section className="desayunos">

@@ -1,11 +1,12 @@
 import React from 'react'
 import './AddCardBtn.css'
+import addToCart from './Prueba'
 
 
-const AddCartBtn = () => {
+const AddCartBtn = (id) => {
 
   return (
-    <button className='btnAdd'>+</button>
+    <button onClick={() => addToCart(id)} className='btnAdd'>+</button>
   )
 }
 
