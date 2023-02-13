@@ -104,7 +104,7 @@ const AdminUsers = () => {
         <img src={logo} alt="bq-logo" className="bq-logo2" />
         <img src={menuIcon} alt="menu-icon" className="menu-icon" />
         <div className="btns-container">
-          <Link to="/AdminUsers" className="btn-products">Productos</Link>
+          <Link to="/AdminProducts" className="btn-products">Productos</Link>
           <Link to="/adminUsers" className="btn-users">Usuarios</Link>
         </div>
         <FormUsers
