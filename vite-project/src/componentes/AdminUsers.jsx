@@ -105,7 +105,7 @@ const AdminUsers = () => {
         <img src={menuIcon} alt="menu-icon" className="menu-icon" />
         <div className="btns-container">
           <Link to="/AdminProducts" className="btn-products">Productos</Link>
-          <Link to="/adminUsers" className="btn-users">Usuarios</Link>
+          <Link to="/adminUsers" className="btn-users2">Usuarios</Link>
         </div>
         <FormUsers
           createData={createData}
