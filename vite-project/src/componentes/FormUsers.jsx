@@ -25,11 +25,7 @@ const FormUsers = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
     const handleChange = (e) => {
         setForm({
             ...form,
-            [e.target.name]: e.target.value,
-            [e.target.dateOfBirth]: e.target.value,
-            [e.target.email]: e.target.value,
-            [e.target.password]: e.target.value,
-            [e.target.roles]: e.target.value,
+            [e.target.name]: e.target.value
         });
     };
 
