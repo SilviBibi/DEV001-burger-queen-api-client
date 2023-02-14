@@ -6,7 +6,7 @@ import './Home.css'
 
 const Home = () => {
     return (
-        <section className="home">
+        <section className="home" data-testid="home-1">
             <img src={logo} alt="bq-logo" className="bq-logo" />
             <img src={burgerqueen} alt="bq-title" className="bq-title" />
             <img src={background} alt="background-chefs" className="background-chefs" />
