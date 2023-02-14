@@ -99,7 +99,7 @@ const AdminProducts = () => {
   };
 
   return (
-    <section className="products">
+    <section className="products" data-testid="adminProducts-1">
       <div className="products-elements">
         <img src={logo} alt="bq-logo" className="bq-logo2" />
         <img src={menuIcon} alt="menu-icon" className="menu-icon" />

@@ -2,9 +2,9 @@ import React from 'react'
 import AddCartBtn from './AddCartBtn'
 import './Cards.css'
 
-const Prueba2 = ({ product }) => {
+const PruebaComidas2 = ({ product }) => {
     let { id, name, price, url, type } = product;
-    if(product.type === 'desayuno' || product.type === 'Desayuno'){
+    if(product.type === 'comida' || product.type === 'Comida'){
         return (
             <div className='Cards'>
                 <img src={url} className='productImg'></img>
@@ -19,4 +19,4 @@ const Prueba2 = ({ product }) => {
 }
 
 
-export default Prueba2
+export default PruebaComidas2
