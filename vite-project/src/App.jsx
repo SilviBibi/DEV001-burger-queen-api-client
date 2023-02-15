@@ -13,6 +13,7 @@ import Comidas from "./componentes/Comidas"
 import { Routes, Route } from "react-router-dom";
 
 export function App() {
+
   return (
     <>
       <Routes>
@@ -22,15 +23,13 @@ export function App() {
         <Route path="/adminProducts" element={<AdminProducts />} />
         <Route path="/adminUsers" element={<AdminUsers />} />
         <Route path="/desayunos" element={<Desayunos>
-            <Cards/>
-            
-
+          <Cards />
         </Desayunos>} />
         <Route path="/comidas" element={<Comidas>
-          <CardsComidas/>
+          <CardsComidas />
 
-          </Comidas>
-      }/>
+        </Comidas>
+        } />
         {/* <Route path="/bebidas" element={<Bebidas/>}/> */}
         <Route path="/chef" element={<Chef />} />
       </Routes>

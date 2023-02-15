@@ -1,5 +1,4 @@
 import React from 'react'
-import AddCartBtn from './AddCartBtn'
 import './Cards.css'
 
 const PruebaComidas2 = ({ product }) => {
@@ -11,7 +10,7 @@ const PruebaComidas2 = ({ product }) => {
                 <h2 className='productName'>{name}</h2>
                 <div className='productDetails'>
                     <p className='price'>{price}</p>
-                    <AddCartBtn />
+                    <button className='btnAdd'>+</button>
                 </div>
         </div>
         );

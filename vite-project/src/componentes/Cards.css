@@ -33,3 +33,19 @@
     justify-content: space-between;
     align-items: center;
 }
+.btnAdd {
+    width: 25px;
+    height: 25px;
+    border: none;
+    border-radius: 25px;
+    background-color: #FA7F4B;
+    color: #FFFF;
+    font-size: 20px;
+    font-weight: 200;
+    font-family: 'Staatliches', cursive;
+    text-align: center;
+    cursor: pointer;
+}
+.btnAdd:hover{
+    background-color: #242121;
+}
