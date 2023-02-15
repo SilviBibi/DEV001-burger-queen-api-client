@@ -1,8 +1,14 @@
 import React from 'react'
-import AddCartBtn from './AddCartBtn'
 import './Cards.css'
+import { BtnAddProduct } from './BtnAddProduct';
+
 
 const Prueba2 = ({ product }) => {
+    
+    // const onAddProducts= () => {
+    //     console.log("Add")
+    // }
+
     let { id, name, price, url, type } = product;
     if(product.type === 'desayuno' || product.type === 'Desayuno'){
         return (
@@ -11,7 +17,11 @@ const Prueba2 = ({ product }) => {
                 <h2 className='productName'>{name}</h2>
                 <div className='productDetails'>
                     <p className='price'>{price}</p>
-                    <AddCartBtn />
+                    <BtnAddProduct
+                     initialState={true}
+                     value = {price}
+                     product = {name}
+                      />
                 </div>
         </div>
         );
