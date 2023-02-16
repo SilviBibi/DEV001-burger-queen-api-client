@@ -15,3 +15,4 @@ export const BtnAddProduct = ({ initialState, product, value}) => {
             <button className ='btnAdd' onClick={handleChange}>+</button>
         )
 }
+ 

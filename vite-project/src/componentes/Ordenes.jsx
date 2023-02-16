@@ -1,10 +1,11 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import deleteIcon from '../../public/Img/delete-icon.png';
 import { useState } from 'react';
+import { Context } from './context/Context';
 
-const Ordenes = (props) => {
-     console.log(props)
-     
+const Ordenes = () => {
+     const example = useContext(Context)
+
     return (
         <>
             <div className="ordenes">
