@@ -4,10 +4,6 @@ import { BtnAddProduct } from './BtnAddProduct';
 
 
 const Prueba2 = ({ product }) => {
-    
-    // const onAddProducts= () => {
-    //     console.log("Add")
-    // }
 
     let { id, name, price, url, type } = product;
     if(product.type === 'desayuno' || product.type === 'Desayuno'){
@@ -19,11 +15,11 @@ const Prueba2 = ({ product }) => {
                     <p className='price'>{price}</p>
                     <BtnAddProduct
                      initialState={true}
-                     value = {price}
+                     value = {price}  
                      product = {name}
                       />
                 </div>
-        </div>
+             </div>
         );
     }
 }
