@@ -11,11 +11,12 @@ import CardsComidas from "./componentes/CardsComidas";
 import Comidas from "./componentes/Comidas"
 //import Bebidas from "./componentes/Bebidas"
 import { Routes, Route } from "react-router-dom";
+import ContextProvider from "./componentes/context/Context";
 
 export function App() {
 
   return (
-    <>
+    <ContextProvider>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
@@ -33,7 +34,7 @@ export function App() {
         {/* <Route path="/bebidas" element={<Bebidas/>}/> */}
         <Route path="/chef" element={<Chef />} />
       </Routes>
-    </>
+    </ContextProvider>
   )
 }
 

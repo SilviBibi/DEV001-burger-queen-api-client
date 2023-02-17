@@ -7,13 +7,14 @@ const Prueba = ({ data }) => {
     return (
         <>
             {data.length > 0 ? (
-                data.map(product => (
+                data.map(product => ( 
                         <Prueba2
                             key={product.id}
                             product={product}
                             url={product.url}
                             name={product.name}
                             price={product.price}
+                            id={product.id}
                         />
                 ))
             ) : (

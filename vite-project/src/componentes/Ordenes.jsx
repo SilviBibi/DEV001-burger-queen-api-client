@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import deleteIcon from '../../public/Img/delete-icon.png';
-import { useState } from 'react';
+import { Context } from './context/Context';
 
-const Ordenes = (props) => {
-     console.log(props)
-     
+const Ordenes = () => {
+    const { add } = useContext(Context)
+    console.log(add)
+
     return (
         <>
             <div className="ordenes">
@@ -15,14 +16,19 @@ const Ordenes = (props) => {
 
             <div className="containerOrden-sendKitchen">
                 <div className="containerOrden">
-                    <div className="resumenOrden2">
-                        <p className="productSelected">Name</p>
-                        <button className="btnMenos">-</button>
-                        <p className="counter">1</p>
-                        <button className="btnMas">+</button>
-                        <p className="price">Price</p>
-                        <img src={deleteIcon} alt="delete-icon" className="delete-icon" />
-                    </div>
+                    {add.map(el => {
+                        return (
+                            <div key={el.id} className='resumenOrden2'>
+                                <p className='productSelected'>{el.product}</p>
+                                <button className="btnMenos">-</button>
+                                <p className="counter">1</p>
+                                <button className="btnMas">+</button>
+                                <p className='price'>{el.value}</p>
+                                <img src={deleteIcon} alt="delete-icon" className="delete-icon" />
+                            </div>
+                        )
+                    })}
+
                     <div className="total">
                         <p className="productSelected">Total</p>
                         <p className="productSelected">$ </p>
