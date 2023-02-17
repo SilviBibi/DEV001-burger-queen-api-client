@@ -14,9 +14,9 @@ const Prueba2 = ({ product }) => {
                 <div className='productDetails'>
                     <p className='price'>{price}</p>
                     <BtnAddProduct
-                     initialState={true}
                      value = {price}  
                      product = {name}
+                     id = {id}
                       />
                 </div>
              </div>
