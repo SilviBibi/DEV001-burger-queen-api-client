@@ -5,8 +5,7 @@ import { Context } from './context/Context';
 
 export const BtnAddProduct = ({ product, value, id}) => {
 
-  const {add, setAdd} = useContext(Context)
-  // console.log(add)
+  const {add, setAdd} = useContext(Context)  
 
       const handleChange = (product) => {
         setAdd(add => [...add, product])

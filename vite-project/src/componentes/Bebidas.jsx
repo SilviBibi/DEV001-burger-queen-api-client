@@ -6,9 +6,10 @@ import './Desayunos.css'
 import logo from '../../public/Img/logo-white.png';
 import menuIcon from '../../public/Img/menu-icon.png';
 import Ordenes from "./Ordenes";
-import { useState } from "react"; 
+import { useState } from "react";
+ 
+const Bebidas = (props) => {
 
-const Desayunos = (props) => {
 
     return (
         <>
@@ -18,9 +19,9 @@ const Desayunos = (props) => {
                 <img src={menuIcon} alt="menu-icon" className="menu-icon-desayunos" />
                 <div className="menu-desayunos">
                     <div className="btns-container">
-                        <Link to="/desayunos" className="btn-desayunos">Desayunos</Link>
+                        <Link to="/desayunos" className="btn-desayunos-off">Desayunos</Link>
                         <Link to="/comidas" className="btn-comidas">Comidas</Link>
-                        <Link to="/bebidas" className="btn-bebidas">Bebidas</Link>
+                        <Link to="/bebidas" className="btn-bebidas-on">Bebidas</Link>
                     </div>
                     <div className="imagenes">
                         {props.children}
@@ -34,4 +35,4 @@ const Desayunos = (props) => {
     );
 }
 
-export default Desayunos;
+export default Bebidas;

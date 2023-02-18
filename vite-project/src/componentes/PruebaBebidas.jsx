@@ -1,14 +1,14 @@
 import React from 'react'
-import Prueba2 from './Prueba2'
+import PruebaBebidas2 from './PruebaBebidas2'
 import './Cards.css'
 import Ordenes from './Ordenes'
 
-const Prueba = ({ data }) => {
+const PruebaBebidas = ({ data }) => {
     return (
         <> 
             {data.length > 0 ? (
                 data.map(product => ( 
-                        <Prueba2
+                        <PruebaBebidas2
                             key={product.id}
                             product={product}
                             url={product.url}
@@ -26,4 +26,4 @@ const Prueba = ({ data }) => {
     )
 }
 
-export default Prueba
+export default PruebaBebidas
