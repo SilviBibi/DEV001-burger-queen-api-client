@@ -18,7 +18,7 @@ const Ordenes = () => {
                 <div className="containerOrden">
                     {add.map(el => {
                         return (
-                            <div key={el.id} className='resumenOrden2'>
+                            <div key={el.id} className='resumenOrden2'> 
                                 <p className='productSelected'>{el.product}</p>
                                 <button className="btnMenos">-</button>
                                 <p className="counter">1</p>

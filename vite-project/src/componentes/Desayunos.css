@@ -208,3 +208,111 @@ flex-direction: column;
     font-family: 'Manrope', sans-serif;
     margin-top: -20px;
 }
+
+.btns-container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: -30px;
+    margin-bottom: 30px;
+    font-family: 'Manrope', sans-serif;
+}
+
+.btn-desayunos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 205px;
+    height: 50px;
+    background-color: #FA7F4B;
+    border: none;
+    border-radius: 35px;
+    font-size: 20px;
+    color: #FFF;
+    font-weight: 600;
+    margin-right: -40px;
+    z-index: 4;
+    text-decoration: none;
+
+}
+
+.btn-desayunos-off {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 205px;
+    height: 50px;
+    background-color: #FFBA7F;
+    border: none;
+    border-radius: 35px;
+    font-size: 20px;
+    color: #FFF;
+    font-weight: 600;
+    margin-right: -40px;
+    z-index: 4;
+    text-decoration: none;
+
+}
+
+.btn-comidas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 205px;
+    height: 50px;
+    background-color: #FFBA7F;
+    border: none;
+    border-radius: 35px;
+    font-size: 20px;
+    color: #FFF;
+    font-weight: 600;
+    text-decoration: none;
+    margin-right: -40px;
+}
+
+.btn-comidas-on {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 205px;
+    height: 50px;
+    background-color: #FA7F4B;
+    border: none;
+    border-radius: 35px;
+    font-size: 20px;
+    color: #FFF;
+    font-weight: 600;
+    text-decoration: none;
+    margin-right: -40px;
+    z-index: 5;
+}
+
+.btn-bebidas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 205px;
+    height: 50px;
+    background-color: #FFBA7F;
+    border: none;
+    border-radius: 35px;
+    font-size: 20px;
+    color: #FFF;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.btn-bebidas-on {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 205px;
+    height: 50px;
+    background-color: #FA7F4B;
+    border: none;
+    border-radius: 35px;
+    font-size: 20px;
+    color: #FFF;
+    font-weight: 600;
+    text-decoration: none;
+}

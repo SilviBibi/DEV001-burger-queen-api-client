@@ -35,7 +35,7 @@ const Login = () => {
                     if(resp.user.roles==="admin"){
                         navigate("/adminProducts")
                     }else  if(resp.user.roles==="waiter"){
-                        navigate("/waiter")
+                        navigate("/desayunos")
                     }else{
                          navigate("/chef")
                     }

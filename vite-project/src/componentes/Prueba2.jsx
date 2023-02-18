@@ -4,7 +4,6 @@ import { BtnAddProduct } from './BtnAddProduct';
 
 
 const Prueba2 = ({ product }) => {
-
     let { id, name, price, url, type } = product;
     if(product.type === 'desayuno' || product.type === 'Desayuno'){
         return (
@@ -15,7 +14,7 @@ const Prueba2 = ({ product }) => {
                     <p className='price'>{price}</p>
                     <BtnAddProduct
                      value = {price}  
-                     product = {name}
+                     product = {name} 
                      id = {id}
                       />
                 </div>
