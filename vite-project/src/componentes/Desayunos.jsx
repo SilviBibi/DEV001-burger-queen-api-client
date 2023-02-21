@@ -26,8 +26,8 @@ const Desayunos = (props) => {
                         {props.children}
                     </div>
                 </div>
-                <div className="containerPedidos">
-                    <Ordenes />
+                <div className="containerOrdenes">
+                    <Ordenes/>
                 </div>
             </section>
         </>
