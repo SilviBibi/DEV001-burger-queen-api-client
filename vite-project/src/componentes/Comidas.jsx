@@ -7,7 +7,7 @@ import menuIcon from '../../public/Img/menu-icon.png';
 import Ordenes from "./Ordenes";
 
 const Comidas = (props) => {
-    return (
+    return ( 
         <>
             <section className="desayunos" data-testid="desayunos-1">
                 <img src={background} alt="background-coffe" className="background-coffe" />
@@ -23,8 +23,8 @@ const Comidas = (props) => {
                         {props.children}
                     </div>
                 </div>
-                <div className="containerPedidos">
-                    <Ordenes />
+                <div className="containerOrdenes">
+                    <Ordenes/>
                 </div>
 
             </section>

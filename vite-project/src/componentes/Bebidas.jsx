@@ -8,7 +8,7 @@ import menuIcon from '../../public/Img/menu-icon.png';
 import Ordenes from "./Ordenes";
 import { useState } from "react";
  
-const Bebidas = (props) => {
+const Bebidas = (props) => { 
 
 
     return (
@@ -27,8 +27,8 @@ const Bebidas = (props) => {
                         {props.children}
                     </div>
                 </div>
-                <div className="containerPedidos">
-                    <Ordenes />
+                <div className="containerOrdenes">
+                    <Ordenes/>
                 </div>
             </section>
         </>

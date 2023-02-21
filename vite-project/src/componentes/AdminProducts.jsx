@@ -103,7 +103,7 @@ const AdminProducts = () => {
       <div className="products-elements">
         <img src={logo} alt="bq-logo" className="bq-logo2" />
         <img src={menuIcon} alt="menu-icon" className="menu-icon" />
-        <div className="btns-container">
+        <div className="btns-container2">
           <Link to="/adminProducts" className="btn-products">Productos</Link>
           <Link to="/adminUsers" className="btn-users">Usuarios</Link>
         </div>

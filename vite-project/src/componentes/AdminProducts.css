@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope&display=swap');
 
 .products {
-    height: auto;
+    min-height: 1180px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -14,7 +14,7 @@
 }
 
 .background-chefs {
-    position: absolute;
+    position: fixed;
     height: 1200px;
     z-index: 1;
 }
@@ -31,6 +31,7 @@
 .menu-icon {
     width: 120px;
     right: 0;
+    top:0;
     position: absolute;
 }
 
@@ -41,6 +42,22 @@
     width: 235px;
     height: 50px;
     background-color: #FA7F4B;
+    border: none;
+    border-radius: 35px;
+    font-size: 20px;
+    color: #FFF;
+    font-weight: 600;
+    margin-right: -40px;
+    z-index: 4;
+    text-decoration: none;
+}
+.btn-products-off {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 235px;
+    height: 50px;
+    background-color: #FFBA7F;
     border: none;
     border-radius: 35px;
     font-size: 20px;
@@ -72,7 +89,7 @@
     justify-content: center;
     width: 235px;
     height: 50px;
-    background-color: #FFBA7F;
+    background-color: #FA7F4B;
     border: none;
     border-radius: 35px;
     font-size: 20px;
@@ -82,7 +99,7 @@
     z-index: 4;
 }
 
-.btns-container {
+.btns-container2 {
     display: flex;
     justify-content: center;
     text-align: center;
@@ -216,4 +233,16 @@ table, tr, td {
     display: block;
     margin: auto;
     max-width: 100px;
+}
+
+@media screen and (min-width:1180px) {
+    .table-title {
+        width: 65%;
+    }
+    .form{
+        width: 70%;
+    }
+    .crear-productos{
+        margin-left: 200px;
+    }
 }

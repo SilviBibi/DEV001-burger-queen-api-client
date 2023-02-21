@@ -23,7 +23,7 @@
 }
 
 .background-chefs {
-    position: absolute;
+    position: fixed;
     height: 1200px;
 }
 
@@ -41,4 +41,16 @@
     align-items: center;
     text-decoration: none;
     margin-top: -100px;
+}
+
+@media screen and (min-width:1180px) {
+    .home{
+        height: 820px;
+    }
+    .bq-title {
+        width: 55%;
+    }   
+    .bq-logo {
+        width: 12%;
+    }
 }
