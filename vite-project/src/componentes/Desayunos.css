@@ -17,7 +17,7 @@
 
 .menu-desayunos {
     width: 60%;
-    z-index: 6;
+    z-index: 3;
     margin-top: -100px;
 }
 
@@ -87,8 +87,8 @@
     z-index: 3;
     display: flex;
     flex-direction: row;
-    width: 80%;
-    align-items: center;
+    width: 90%;
+    align-items: flex-start;
     justify-content: center;
     font-size: 22px;
 }
@@ -341,6 +341,34 @@
     text-decoration: none;
 }
 
+.menu {
+    display: none;
+}
+
+.menu.open {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 40%;
+    height: 40%;
+    background-color: #FA7F4B;
+    opacity: 80%;
+    z-index: 7;
+    align-items: center;
+    color: #FFF;
+    font-family: 'Staatliches', cursive;
+    font-size: 25px;
+    text-decoration: none;
+    top: 0;
+    position: absolute;
+    right: 0;
+}
+
+.navbar {
+    z-index: 6;
+}
+
+
 @media screen and (min-width:1180px) {
     .desayunos {
         flex-direction: row;
@@ -369,7 +397,7 @@
     }
 
     .ordenTitle {
-        margin-top: 150px;
+        margin-top: 90px;
     }
 
     .containerOrden {
@@ -379,8 +407,8 @@
     }
 
     .productSelected {
-        max-width: 100px;
-        min-width: 100px;
+        max-width: 120px;
+        min-width: 120px;
         margin-left: 0;
         display: flex;
         justify-content: center;
@@ -390,7 +418,13 @@
     .input-class2 {
         width: 50%;
     }
+
     .btns-containerUsers {
         margin-top: -250px;
     }
+
+    .menu-icon-desayunos {
+        right: 35%;
+    }
+
 }

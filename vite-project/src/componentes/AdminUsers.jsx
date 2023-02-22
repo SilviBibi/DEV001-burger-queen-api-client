@@ -6,7 +6,7 @@ import { helpHttp } from "../helpers/helpHttp";
 import Loader from "./Loader";
 import Message from "./Message";
 import logo from '../../public/Img/logo-white.png';
-import menuIcon from '../../public/Img/menu-icon.png';
+import logout from '../../public/Img/logout-logo.png';
 import './AdminProducts.css';
 
 const AdminUsers = () => {
@@ -102,7 +102,7 @@ const AdminUsers = () => {
     <section className="products">
       <div className="products-elements">
         <img src={logo} alt="bq-logo" className="bq-logo2" />
-        <img src={menuIcon} alt="menu-icon" className="menu-icon" />
+        <img src={logout} alt="menu-icon" className="logout-icon" />
         <div className="btns-containerUsers">
           <Link to="/AdminProducts" className="btn-products-off">Productos</Link>
           <Link to="/adminUsers" className="btn-users2">Usuarios</Link>

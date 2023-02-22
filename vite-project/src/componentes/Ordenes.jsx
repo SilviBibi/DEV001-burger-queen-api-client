@@ -3,8 +3,19 @@ import deleteIcon from '../../public/Img/delete-icon.png';
 import { Context } from './context/Context';
 
 const Ordenes = () => {
-    const { add } = useContext(Context)
+    const { add, setAdd } = useContext(Context)
     console.log(add)
+
+    const handleChange = (add) => {
+        setAdd(add.filter((el => el.id !== add.id)))
+    }
+
+    let total = 0
+    add.map((el => {
+        total += el.value;
+    }))
+
+
 
     return (
         <div className="containerOrden-sendKitchen">
@@ -20,13 +31,13 @@ const Ordenes = () => {
                                 <p className="counter">1</p>
                                 <button className="btnMas">+</button>
                                 <p className='price'>{el.value}</p>
-                                <img src={deleteIcon} alt="delete-icon" className="delete-icon" />
+                                <img src={deleteIcon} alt="delete-icon" className="delete-icon" onClick={() => handleChange(add)} />
                             </div>
                         )
                     })}
                     <div className="total">
                         <p className="productSelected">Total</p>
-                        <p className="productSelected">$ </p>
+                        <p className="productSelected">{total}</p>
                     </div>
                     <div className="btnSendKitchen">
                         <button className="btn-kitchen">MANDAR A COCINA</button>
