@@ -28,10 +28,10 @@
     flex-wrap: wrap;
 }
 
-.menu-icon {
-    width: 120px;
-    right: 0;
-    top:0;
+.logout-icon {
+    width: 80px;
+    right: 10px;
+    top: 27px;
     position: absolute;
 }
 
