@@ -4,39 +4,32 @@ import { Context } from './context/Context';
 import { useState } from 'react';
 
 const initialOrder =  {
-      idOrder: "",
-      userId: "",
-      client: "",
-      products:[
-        {
-          products: {
-            qty: 1,
-            product:{}
-          }
-          }
-      ],
-      status: "",
-      dateEntry: "",
-      dateProcessed: ""
-    };
+    idOrder: "",
+    userId: "",
+    client: "",
+    products:[
+      {
+        products: {
+          qty: 1,
+          product:{}
+        }
+        }
+    ],
+    status: "",
+    dateEntry: "",
+    dateProcessed: ""
+  };
+
 
 const Ordenes = () => {
     const { add, setAdd } = useContext(Context)
-    let [ counter, setCounter ]= useState(1)
+    console.log(add)
 
-    const handleChange = (el) => {
+    const deleteProduct = (el) => {
         setAdd(add.filter(elements => elements != el))
     }
-    const value = add.map(el => el.value)
+    const value = add.map(el => el.value*el.qty)
     const total = value.reduce((a, b) => a + b, 0)
-
-    const increase = () => {
-        setCounter(counter+= 1)
-    }
-
-    const decrease = () => {
-        setCounter(counter-=1)
-    }
 
     const [order, setOrder] = useState(initialOrder);
 
@@ -74,11 +67,11 @@ const Ordenes = () => {
                         return (
                             <div key={el.id*Math.random()*50000} className='resumenOrden2'>
                                 <p className='productSelected'>{el.product}</p>
-                                <button className="btnMenos" onClick={decrease}>-</button>
-                                <p className="counter">{counter}</p>
-                                <button className="btnMas" onClick={increase}>+</button>
-                                <p className='price'>$ {el.value}</p>
-                                <img src={deleteIcon} alt="delete-icon" className="delete-icon" onClick={() => handleChange(el)} />
+                                <button className="btnMenos">-</button>
+                                <p className="counter">{el.qty}</p>
+                                <button className="btnMas">+</button>
+                                <p className='price'>$ {el.value*el.qty}</p>
+                                <img src={deleteIcon} alt="delete-icon" className="delete-icon" onClick={() => deleteProduct(el)} />
                             </div>
                         )
                     })}
