@@ -3,7 +3,8 @@ import './Cards.css'
 import { BtnAddProduct } from './BtnAddProduct';
 
 const PruebaComidas2 = ({ product }) => {
-    let { id, name, price, url, type, qty } = product;
+    let qty= 1
+    let { id, name, price, url, type } = product;
     if(product.type === 'comida' || product.type === 'Comida'){
         return (
             <div className='Cards'>
