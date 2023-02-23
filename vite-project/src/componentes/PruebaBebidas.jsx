@@ -15,6 +15,7 @@ const PruebaBebidas = ({ data }) => {
                             name={product.name}
                             price={product.price}
                             id={product.id}
+                            qty={product.qty}
                         />
                 ))
             ) : (

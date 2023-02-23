@@ -14,6 +14,7 @@ const Prueba = ({ data }) => {
                             url={product.url}
                             name={product.name}
                             price={product.price}
+                            qty={product.qty}
                             id={product.id}
                         />
                 ))
