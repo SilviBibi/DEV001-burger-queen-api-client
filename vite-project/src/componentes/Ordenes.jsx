@@ -39,6 +39,33 @@ const Ordenes = () => {
             [e.target.name]: e.target.value,
         });
     };
+    
+    const addProduct = (product) => {
+        if(add.find(item=> item.id === product.id)){
+            const products = add.map(item =>
+              item.id === product.id
+              ? {...item, qty: item.qty +1}
+              : item
+              );
+              return setAdd([...products])
+          }
+          setAdd(add => [...add, product])
+        };
+
+        const subtractProduct = (product) => {
+            if(product.qty < 1 ){
+                return 0
+            }
+            else if(add.find(item=> item.id === product.id)){
+                const products = add.map(item =>
+                  item.id === product.id
+                  ? {...item, qty: item.qty -1}
+                  : item
+                  );
+                  return setAdd([...products])
+              }
+              setAdd(add => [...add, product])
+            };
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -67,9 +94,9 @@ const Ordenes = () => {
                         return (
                             <div key={el.id*Math.random()*50000} className='resumenOrden2'>
                                 <p className='productSelected'>{el.product}</p>
-                                <button className="btnMenos">-</button>
+                                <button className="btnMenos" onClick={() => subtractProduct(el)}>-</button>
                                 <p className="counter">{el.qty}</p>
-                                <button className="btnMas">+</button>
+                                <button className="btnMas" onClick={() => addProduct(el)}>+</button>
                                 <p className='price'>$ {el.value*el.qty}</p>
                                 <img src={deleteIcon} alt="delete-icon" className="delete-icon" onClick={() => deleteProduct(el)} />
                             </div>
