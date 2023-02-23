@@ -49,7 +49,6 @@ const AdminProducts = () => {
           setError(res);
         };
       });
-
   };
 
   const updateData = (data) => {
