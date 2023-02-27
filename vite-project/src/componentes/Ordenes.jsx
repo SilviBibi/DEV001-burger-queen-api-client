@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import { helpHttp } from "../helpers/helpHttp";
 
 const initialOrder = {
-    idOrder: "",
+    id: "",
     userId: "",
     client: "",
     products: [
@@ -29,7 +29,6 @@ const Ordenes = () => {
     const [loading, setLoading] = useState(false);
     const [name, setName] = useState('');
 
-    // console.log(add)
 
     let api = helpHttp();
     let url = "http://localhost:5000/orders";
@@ -48,24 +47,6 @@ const Ordenes = () => {
                 setLoading(false);
             });
     }, [url]);
-
-    const createOrder = (data) => {
-        data.id = Date.now();
-        // console.log(data)
-        let options = {
-            body: data,
-            headers: { "content-type": "application/json" }
-        };
-        api.post(url, options)
-            .then((res) => {
-                // console.log(res);
-                if (!res.err) {
-                    setDb([...db, res])
-                } else {
-                    setError(res);
-                };
-            });
-    };
 
     const deleteProduct = (el) => {
         setAdd(add.filter(elements => elements != el))
@@ -105,9 +86,27 @@ const Ordenes = () => {
         setName(e.target.value);
     };
 
+    const createOrder = (order) => {
+        // console.log(order)
+        let options = {
+            body: order,
+            headers: { "content-type": "application/json" }
+        };
+        api.post(url, options)
+            .then((res) => {
+                // console.log(res)
+
+                if (!res.err) {
+                    setDb([...db, res])
+                } else {
+                    setError(res);
+                }
+            })
+            .catch(err => console.log(err))
+    };
+
 
     const handleSubmit = (e) => {
-        console.log(order + 'orden del handleSubmit')
         e.preventDefault();
         if (!name) {
             alert("Por favor ingresa el nombre del cliente");
@@ -116,19 +115,28 @@ const Ordenes = () => {
             alert("No hay ningún producto seleccionado");
             return;
         } else {
-            setOrder({
+            // setOrder({
+            //     ...order,
+            //     client: name,
+            //     products: add,
+            //     dateEntry: new Date(),
+            //     status: "ACTIVO",
+            //     id: Date.now()
+            // })
+            createOrder({
                 ...order,
                 client: name,
                 products: add,
                 dateEntry: new Date(),
                 status: "ACTIVO",
-                idOrder: Date.now()
+                id: Date.now()
             })
-            // createOrder(order)
         };
-
-        console.log(order)
     };
+
+    // console.log(order)
+
+
 
     return (
         <div className="containerOrden-sendKitchen">
