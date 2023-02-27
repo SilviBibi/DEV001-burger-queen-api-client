@@ -27,8 +27,9 @@ const Ordenes = () => {
     const [db, setDb] = useState(undefined);
     const [error, setError] = useState(undefined);
     const [loading, setLoading] = useState(false);
+    const [name, setName] = useState('');
 
-    console.log(add)
+    // console.log(add)
 
     let api = helpHttp();
     let url = "http://localhost:5000/orders";
@@ -57,7 +58,7 @@ const Ordenes = () => {
         };
         api.post(url, options)
             .then((res) => {
-                console.log(res);
+                // console.log(res);
                 if (!res.err) {
                     setDb([...db, res])
                 } else {
@@ -100,15 +101,15 @@ const Ordenes = () => {
     };
 
     const handleName = (e) => {
-        setOrder({
-            ...order,
-            [e.target.name]: e.target.value,
-        });
+        // console.log(order + 'orden del handleName')
+        setName(e.target.value);
     };
 
+
     const handleSubmit = (e) => {
+        console.log(order + 'orden del handleSubmit')
         e.preventDefault();
-        if (!order.client) {
+        if (!name) {
             alert("Por favor ingresa el nombre del cliente");
             return;
         } else if (add.length === 0) {
@@ -117,6 +118,7 @@ const Ordenes = () => {
         } else {
             setOrder({
                 ...order,
+                client: name,
                 products: add,
                 dateEntry: new Date(),
                 status: "ACTIVO",
@@ -132,7 +134,7 @@ const Ordenes = () => {
         <div className="containerOrden-sendKitchen">
             <div className="ordenes">
                 <p className='ordenTitle'>ORDEN</p>
-                <input className="input-class2" type="text" name="client" placeholder="Nombre del Cliente" onChange={handleName} value={order.client} />
+                <input className="input-class2" type="text" name="client" placeholder="Nombre del Cliente" onChange={handleName} value={name} />
                 <div className="containerOrden">
                     {add.map(el => {
                         return (
