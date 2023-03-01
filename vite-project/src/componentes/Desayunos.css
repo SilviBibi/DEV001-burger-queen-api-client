@@ -12,7 +12,7 @@
 .background-coffe {
     position: fixed;
     height: 1200px;
-    z-index: 1;
+    /* z-index: 1; */
 }
 
 .menu-desayunos {

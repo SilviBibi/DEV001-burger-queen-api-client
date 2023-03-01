@@ -2,7 +2,7 @@ import React from 'react'
 import Prueba2 from './Prueba2'
 import './Cards.css'
 import Ordenes from './Ordenes'
-
+ 
 const Prueba = ({ data }) => {
     return (
         <> 

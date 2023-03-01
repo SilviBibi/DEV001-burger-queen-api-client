@@ -37,7 +37,7 @@ const Login = () => {
                     }else  if(resp.user.roles==="waiter"){
                         navigate("/desayunos")
                     }else{
-                         navigate("/chef")
+                         navigate("/pedidos-chef")
                     }
 
                     

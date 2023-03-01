@@ -1,0 +1,15 @@
+.cardsPedidos {
+    display: flex;
+    flex-direction: row;
+    background-color: #FFE181;
+    position: relative;
+    width: 40%;
+    min-height: 280px;
+    justify-content: center;
+    align-content: center;
+    padding: 20px 16px;
+    border-radius: 12px;
+    color: #FFFF;
+    font-family: 'Staatliches', cursive;
+    gap: 13px;
+}
