@@ -131,6 +131,8 @@ const Ordenes = () => {
                 status: "ACTIVO",
                 id: Date.now()
             })
+            setAdd([])
+            setName('')
         };
     };
 

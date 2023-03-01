@@ -1,7 +1,7 @@
 import React from 'react'
 import './Cards.css'
 import { BtnAddProduct } from './BtnAddProduct';
-
+ 
 
 const Prueba2 = ({ product }) => {
     let qty= 1

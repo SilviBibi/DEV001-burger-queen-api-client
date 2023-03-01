@@ -3,7 +3,7 @@ import Home from "./componentes/Home";
 import Login from "./componentes/Login";
 import AdminProducts from "./componentes/AdminProducts";
 import AdminUsers from "./componentes/AdminUsers";
-import Chef from "./componentes/Chef"
+import PedidosChef from "./componentes/PedidosChef"
 import Desayunos from "./componentes/Desayunos"
 import Cards from "./componentes/Cards";
 import CardsComidas from "./componentes/CardsComidas";
@@ -34,7 +34,7 @@ export function App() {
         </Bebidas>
         } />
         {/* <Route path="/bebidas" element={<Bebidas/>}/> */}
-        <Route path="/chef" element={<Chef />} />
+        <Route path="/pedidos-chef" element={<PedidosChef />} />
       </Routes>
     </ContextProvider>
   )
