@@ -101,7 +101,7 @@ const AdminProducts = () => {
     <section className="products" data-testid="adminProducts-1">
       <div className="products-elements">
         <img src={logo} alt="bq-logo" className="bq-logo2" />
-        <img src={logout} alt="menu-icon" className="logout-icon" />
+        <Link to="/" className="nav-link" href="#"><img src={logout} alt="menu-icon" className="logout-icon" /></Link>
         <div className="btns-container2">
           <Link to="/adminProducts" className="btn-products">Productos</Link>
           <Link to="/adminUsers" className="btn-users">Usuarios</Link>

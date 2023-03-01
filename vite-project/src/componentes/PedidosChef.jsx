@@ -6,6 +6,7 @@ import Loader from "./Loader";
 import background from '../../public/Img/background-chefs2.png';
 import logo from '../../public/Img/logo-white.png';
 import logout from '../../public/Img/logout-logo.png';
+import { Link, useNavigate } from "react-router-dom";
 
 const PedidosChef = () => {
     const [db, setDb] = useState(undefined);
@@ -34,7 +35,11 @@ const PedidosChef = () => {
         <>
             <img src={background} alt="background-coffe" className="background-coffe" />
             <img src={logo} alt="bq-logo" className="bq-logo2" />
-            <img src={logout} alt="menu-icon" className="logout-icon" />
+            <Link to="/" className="nav-link" href="#"><img src={logout} alt="menu-icon" className="logout-icon" /></Link>
+
+            {/* <div className="pedidos-title-container">
+                <p className="pedidos-title">Pedidos</p>
+            </div> */}
 
             {loading && <Loader />}
             {error && (

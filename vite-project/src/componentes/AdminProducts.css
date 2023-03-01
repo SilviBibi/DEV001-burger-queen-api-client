@@ -124,7 +124,7 @@
     display: flex;
     width: 85%;
     flex-wrap: wrap;
-    height: 80px;
+    height: auto;
     padding: 20px;
     gap: 10px;
     border-radius: 12px;

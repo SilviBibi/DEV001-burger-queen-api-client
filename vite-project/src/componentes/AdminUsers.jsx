@@ -102,7 +102,7 @@ const AdminUsers = () => {
     <section className="products">
       <div className="products-elements">
         <img src={logo} alt="bq-logo" className="bq-logo2" />
-        <img src={logout} alt="menu-icon" className="logout-icon" />
+        <Link to="/" className="nav-link" href="#"><img src={logout} alt="menu-icon" className="logout-icon" /></Link>
         <div className="btns-containerUsers">
           <Link to="/AdminProducts" className="btn-products-off">Productos</Link>
           <Link to="/adminUsers" className="btn-users2">Usuarios</Link>

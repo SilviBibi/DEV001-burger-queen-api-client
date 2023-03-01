@@ -4,30 +4,15 @@ import { Context } from './context/Context';
 import { useState, useEffect } from 'react';
 import { helpHttp } from "../helpers/helpHttp";
 
-const initialOrder = {
-    id: "",
-    userId: "",
-    client: "",
-    products: [
-        {
-            products: {
-                qty: 0,
-                product: {}
-            }
-        }
-    ],
-    status: "",
-    dateEntry: "",
-    dateProcessed: ""
-}
-
 const Ordenes = () => {
     const { add, setAdd } = useContext(Context)
-    const [order, setOrder] = useState(initialOrder);
     const [db, setDb] = useState(undefined);
+    const [ order, setOrder ] = useState([])
     const [error, setError] = useState(undefined);
     const [loading, setLoading] = useState(false);
     const [name, setName] = useState('');
+
+    // console.log(add)
 
 
     let api = helpHttp();
@@ -95,7 +80,6 @@ const Ordenes = () => {
         api.post(url, options)
             .then((res) => {
                 // console.log(res)
-
                 if (!res.err) {
                     setDb([...db, res])
                 } else {
@@ -115,20 +99,12 @@ const Ordenes = () => {
             alert("No hay ningún producto seleccionado");
             return;
         } else {
-            // setOrder({
-            //     ...order,
-            //     client: name,
-            //     products: add,
-            //     dateEntry: new Date(),
-            //     status: "ACTIVO",
-            //     id: Date.now()
-            // })
             createOrder({
                 ...order,
                 client: name,
                 products: add,
                 dateEntry: new Date(),
-                status: "ACTIVO",
+                status: "EN PROCESO",
                 id: Date.now()
             })
             setAdd([])
