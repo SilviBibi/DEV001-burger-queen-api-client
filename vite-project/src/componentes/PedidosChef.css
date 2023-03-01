@@ -3,13 +3,54 @@
     flex-direction: row;
     background-color: #FFE181;
     position: relative;
-    width: 40%;
-    min-height: 280px;
+    width: 250px;
+    height: 350px;
     justify-content: center;
     align-content: center;
     padding: 20px 16px;
     border-radius: 12px;
     color: #FFFF;
-    font-family: 'Staatliches', cursive;
+    font-family: 'Manrope', sans-serif;
     gap: 13px;
+    flex-direction: column;
+    color: #000000; 
+    text-align: center;
+}
+
+.container-cards-pedidos {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    top: 200px;
+    position: absolute;
+    gap: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.pedidos-title-container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 15%;
+}
+
+.product-client {
+    background-color: #FFFFFF;
+    color: #776D6D;
+    border-radius: 10px;
+    height: 32px;
+    align-content: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+.btn-deliver {
+    background-color: #FA7F4B;
+    border-radius: 10px;
+    border: none;
+    height: 32px;
+    color: #FFFFFF;
 }

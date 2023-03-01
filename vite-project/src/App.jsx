@@ -13,7 +13,7 @@ import Bebidas from "./componentes/Bebidas"
 import { Routes, Route } from "react-router-dom";
 import ContextProvider from "./componentes/context/Context";
 
-export function App() {
+export function App() { 
 
   return (
     <ContextProvider>

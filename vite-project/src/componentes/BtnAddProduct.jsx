@@ -6,7 +6,7 @@ import { Context } from './context/Context';
 export const BtnAddProduct = ({ product, value, id, qty}) => {
 
   const {add, setAdd} = useContext(Context)  
-
+ 
       const handleChange = (product) => {
         if(add.find(item=> item.id === product.id)){
           const products = add.map(item =>
@@ -16,7 +16,8 @@ export const BtnAddProduct = ({ product, value, id, qty}) => {
             );
             return setAdd([...products])
         }
-        setAdd(add => [...add, product])
+        setAdd(add => [...add, product]) 
+        // console.log(add)
       }
         return (
             <button className ='btnAdd' onClick={() => handleChange({product, value, id, qty})}>+</button>
