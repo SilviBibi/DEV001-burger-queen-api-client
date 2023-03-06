@@ -29,7 +29,7 @@ const Bebidas = (props) => {
                                         <Link to="/desayunos" className="nav-link active" aria-current="page" href="#">MENÚ</Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link to="/pedidos" className="nav-link" href="#">PEDIDOS</Link>
+                                        <Link to="/pedidos-listos" className="nav-link" href="#">PEDIDOS</Link>
                                     </li>
                                     <li className="nav-item">
                                         <Link to="/" className="nav-link" href="#">CERRAR SESIÓN</Link>
