@@ -65,11 +65,11 @@ const AdminProducts = () => {
         if (!res.err) {
           let newData = db.map(el => el.id === data.id ? data : el);
           setDb(newData);
+          // console.log(newData)
         } else {
           setError(res);
         };
       });
-
 
   };
 
