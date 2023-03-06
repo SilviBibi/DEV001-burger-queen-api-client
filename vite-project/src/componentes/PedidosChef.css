@@ -4,7 +4,8 @@
     background-color: #FFE181;
     position: relative;
     width: 250px;
-    height: 350px;
+    min-height: 350px;
+    height: auto;
     justify-content: center;
     align-content: center;
     padding: 20px 16px;

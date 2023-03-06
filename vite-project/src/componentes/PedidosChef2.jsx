@@ -1,12 +1,13 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import { helpHttp } from "../helpers/helpHttp";
 import './PedidosChef.css'
+// import Swal from 'sweetalert2'
 
 const PedidosChef2 = ({ data }) => {
     // console.log(data)
 
     const [loading, setLoading] = useState(false);
-    const [db, setDb] = useState(undefined);
+    const [db, setDb] = useState([]);
     const [error, setError] = useState(undefined);
 
     let api = helpHttp();
@@ -16,56 +17,74 @@ const PedidosChef2 = ({ data }) => {
     useEffect(() => {
         setLoading(true);
         api.get(url)
-          .then((res) => {
-            if (!res.err) {
-              setDb(res)
-              setError(undefined);
-            } else {
-              setDb(undefined);
-              setError(res);
-            }
-            setLoading(false);
-          });
-      }, [url]);
+            .then((res) => {
+                if (!res.err) {
+                    setDb(res)
+                    setError(undefined);
+                } else {
+                    setDb(undefined);
+                    setError(res);
+                }
+                setLoading(false);
+            });
+    }, [url]);
 
     // Crear función que se encarga de actualizar una orden en específico
     const updateData = (data) => {
         let endpoint = `${url}/${data.id}`
 
-        console.log(endpoint)
+        // console.log(endpoint)
+        // debugger
+        data.status = "LISTO PARA ENTREGAR"
+        data.dateProcessed = new Date()
 
         let options = {
-          body: data,
-          headers: { "content-type": "application/json" }
+            body: data,
+            headers: { "content-type": "application/json" }
         };
         api.put(endpoint, options)
-          .then((res) => {
-            if (!res.err) {
-              let newData = db.map(el => el.id === data.id ? data : el);
-              data.status = "LISTO PARA ENTREGAR"
-              console.log(data)
-              setDb(newData);
-              console.log(newData)
-            } else {
-              setError(res);
-            }; 
-          }); 
+            .then((res) => {
+                if (!res.err) {
+                    const newData = db.map(el => el.id === data.id ? data : el);
+                    console.log(data)
+                    setDb(newData);
+                    // console.log(newData)
+                } else {
+                    setError(res);
+                };
+            });
     };
 
     // Declarar una función que se encarga de llamar updateData
 
     const handleSubmit = (product) => {
-        // e.preventDefault();
 
+        // Swal.fire({
+        //     title: '¿Seguro que el pedido está listo?',
+        //     icon: 'warning',
+        //     showCancelButton: true,
+        //     confirmButtonColor: '#3085d6',
+        //     cancelButtonColor: '#d33',
+        //     confirmButtonText: '¡Sí, mandar!'
+        // }).then((result) => {
+        //     if (result.isConfirmed) {
+        //         Swal.fire(
+        //             '¡Enviado!',
+        //             'El pedido ha sido enviado.',
+        //             'success'
+        //         )
+        //     }
+            
+        // })
+        
         if (product.id === undefined) {
             console.log('El pedido no existe')
         } else {
             updateData(product)
         }
-        // handleReset();
     };
 
-    
+
 
 
     return (
@@ -82,8 +101,8 @@ const PedidosChef2 = ({ data }) => {
                                         <p>{order.qty} {order.product}</p>
                                     </div>
                                 )
-                            })} 
-                            <p className="">Hora del pedido: {product.dateEntry}</p>
+                            })}
+                            <p className="">Hora de entrada: {product.dateEntry}</p>
                             <button className='btn-deliver' onClick={() => handleSubmit(product)}>Listo para entregar</button>
                         </div>
                     )

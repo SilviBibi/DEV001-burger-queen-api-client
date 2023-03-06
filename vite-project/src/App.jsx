@@ -4,6 +4,7 @@ import Login from "./componentes/Login";
 import AdminProducts from "./componentes/AdminProducts";
 import AdminUsers from "./componentes/AdminUsers";
 import PedidosChef from "./componentes/PedidosChef"
+import PedidosListos from "./componentes/PedidosListos"
 import Desayunos from "./componentes/Desayunos"
 import Cards from "./componentes/Cards";
 import CardsComidas from "./componentes/CardsComidas";
@@ -35,6 +36,7 @@ export function App() {
         } />
         {/* <Route path="/bebidas" element={<Bebidas/>}/> */}
         <Route path="/pedidos-chef" element={<PedidosChef />} />
+        <Route path="/pedidos-listos" element={<PedidosListos />} />
       </Routes>
     </ContextProvider>
   )
