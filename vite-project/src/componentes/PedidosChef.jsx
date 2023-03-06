@@ -37,9 +37,9 @@ const PedidosChef = () => {
             <img src={logo} alt="bq-logo" className="bq-logo2" />
             <Link to="/" className="nav-link" href="#"><img src={logout} alt="menu-icon" className="logout-icon" /></Link>
 
-            {/* <div className="pedidos-title-container">
-                <p className="pedidos-title">Pedidos</p>
-            </div> */}
+            <div className="btns-container">
+                <p className="orders-title">Pedidos en proceso</p>
+            </div>
 
             {loading && <Loader />}
             {error && (

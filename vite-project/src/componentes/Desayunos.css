@@ -11,7 +11,7 @@
 
 .background-coffe {
     position: fixed;
-    height: 1200px;
+    height: 1285px;
     /* z-index: 1; */
 }
 
@@ -257,7 +257,6 @@
     margin-right: -40px;
     z-index: 4;
     text-decoration: none;
-
 }
 
 .btn-desayunos-off {

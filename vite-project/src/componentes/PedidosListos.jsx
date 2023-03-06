@@ -123,6 +123,10 @@ const PedidosListos = () => {
                 </nav>
             </div>
 
+            <div className="btns-container">
+                <p className="orders-title">Pedidos listos</p>
+            </div>
+
             <div className='container-cards-pedidos'>
                 {db.map(product => {
                     // console.log(product.products)
