@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { helpHttp } from "../helpers/helpHttp";
 import './PedidosChef.css'
-// import Swal from 'sweetalert2'
+import Swal from 'sweetalert2'
 
 const PedidosChef2 = ({ data }) => {
     // console.log(data)
@@ -59,29 +59,27 @@ const PedidosChef2 = ({ data }) => {
 
     const handleSubmit = (product) => {
 
-        // Swal.fire({
-        //     title: '¿Seguro que el pedido está listo?',
-        //     icon: 'warning',
-        //     showCancelButton: true,
-        //     confirmButtonColor: '#3085d6',
-        //     cancelButtonColor: '#d33',
-        //     confirmButtonText: '¡Sí, mandar!'
-        // }).then((result) => {
-        //     if (result.isConfirmed) {
-        //         Swal.fire(
-        //             '¡Enviado!',
-        //             'El pedido ha sido enviado.',
-        //             'success'
-        //         )
-        //     }
-            
-        // })
-        
-        if (product.id === undefined) {
-            console.log('El pedido no existe')
-        } else {
-            updateData(product)
-        }
+        Swal.fire({
+            title: '¿Seguro que el pedido está listo?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: '¡Sí, enviar!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                    '¡Enviado!',
+                    'El pedido ha sido enviado con éxito.',
+                    'success'
+                )
+            } if (product.id === undefined) {
+                console.log('El pedido no existe')
+            } else {
+                updateData(product)
+            }
+
+        })
     };
 
 

@@ -3,6 +3,7 @@ import deleteIcon from '../../public/Img/delete-icon.png';
 import { Context } from './context/Context';
 import { useState, useEffect } from 'react';
 import { helpHttp } from "../helpers/helpHttp";
+import Swal from 'sweetalert2'
 
 const Ordenes = () => {
     const { add, setAdd } = useContext(Context)
@@ -93,25 +94,50 @@ const Ordenes = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!name) {
-            alert("Por favor ingresa el nombre del cliente");
+            Swal.fire({
+                position: 'center',
+                icon: 'error',
+                title: 'Por favor ingresa el nombre del cliente',
+                showConfirmButton: false,
+                timer: 1000
+              })
             return;
         } else if (add.length === 0) {
-            alert("No hay ningún producto seleccionado");
+            Swal.fire({
+                position: 'center',
+                icon: 'error',
+                title: 'No hay ningún producto seleccionado',
+                showConfirmButton: false,
+                timer: 1000
+              })
             return;
         } else {
-            createOrder({
-                ...order,
-                client: name,
-                products: add,
-                dateEntry: new Date(),
-                status: "EN PROCESO",
-                id: Date.now()
-            })
-            setAdd([])
-            setName('')
-        };
-    };
-
+            Swal.fire({
+                title: '¿Seguro que deseas enviar el pedido a cocina?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: '¡Sí, enviar!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    createOrder({
+                        ...order,
+                        client: name,
+                        products: add,
+                        dateEntry: new Date(),
+                        status: "EN PROCESO",
+                        id: Date.now()
+                    })
+                    setAdd([])
+                    setName('')
+                    Swal.fire(
+                        '¡Enviado!',
+                        'El pedido ha sido enviado a cocina con éxito.',
+                        'success',
+                    )
+        }})}
+    }
     // console.log(order)
 
 

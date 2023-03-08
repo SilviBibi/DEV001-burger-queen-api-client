@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import logo from '../../public/Img/logo-white.png';
 import background from '../../public/Img/background-chefs2.png';
 import './Login.css'
+import Swal from 'sweetalert2'
 
 const Login = () => {
     const [data, setData] = useState({
@@ -19,7 +20,11 @@ const Login = () => {
         // console.log(updateEmail, updatePassword)
 
         if (updateEmail === "" || updatePassword === "") {
-            alert('Por favor llene todos los campos.')
+            Swal.fire(
+                'Datos incompletos',
+                'Por favor completa todos los campos.',
+                'error'
+              )
             return
         }
 
@@ -32,6 +37,13 @@ const Login = () => {
             .then(resp => resp.ok ? resp.json() : Promise.reject({ err: true }))
             .then(resp => {
                 if (!resp.err) {
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: 'Has iniciado sesión con éxito',
+                        showConfirmButton: false,
+                        timer: 1000
+                      })
                     if(resp.user.roles==="admin"){
                         navigate("/adminProducts")
                     }else  if(resp.user.roles==="waiter"){
@@ -39,12 +51,14 @@ const Login = () => {
                     }else{
                          navigate("/pedidos-chef")
                     }
-
-                    
                 }
             })
             .catch((err) => {
-                alert('Datos incorrectos')
+                Swal.fire(
+                    'Datos incorrectos',
+                    'Por favor verifica tus credenciales.',
+                    'error'
+                  )
             });
 
     };
