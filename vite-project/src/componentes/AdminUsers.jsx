@@ -43,7 +43,7 @@ const AdminUsers = () => {
     };
     api.post(url, options)
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         if (!res.err) {
           setDb([...db, res])
         } else {
@@ -57,7 +57,7 @@ const AdminUsers = () => {
     let endpoint = `${url}/${data.id}`
     // console.log(endpoint)
 
-    let options = {
+    let options = { 
       body: data,
       headers: { "content-type": "application/json" }
     };
@@ -91,7 +91,7 @@ const AdminUsers = () => {
         };
         api.del(endpoint, options)
           .then((res) => {
-            console.log(res);
+            // console.log(res);
             if (!res.err) {
               let newData = db.filter(el => el.id !== id);
               setDb(newData);

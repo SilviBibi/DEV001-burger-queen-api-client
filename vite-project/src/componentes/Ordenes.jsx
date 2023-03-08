@@ -140,9 +140,13 @@ const Ordenes = () => {
                 confirmButtonText: '¡Sí, enviar!'
             }).then((result) => {
                 if (result.isConfirmed) {
+                    
+                    let userId = localStorage.getItem("currentUserId");
+
                     createOrder({
                         ...order,
                         client: name,
+                        userId: userId,
                         products: add,
                         dateEntry: new Date(),
                         status: "EN PROCESO",

@@ -1,11 +1,35 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import logo from '../../public/Img/logo-white.png';
 import background from '../../public/Img/background-chefs2.png';
 import './Login.css'
 import Swal from 'sweetalert2'
+import { helpHttp } from "../helpers/helpHttp";
 
 const Login = () => {
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(undefined);
+    const [db, setDb] = useState(undefined);
+
+    // Buscamos el usuario ingresado dentro del endpoint
+    let api = helpHttp();
+    let usersUrl = "http://localhost:5000/users";
+
+    useEffect(() => {
+        setLoading(true);
+        api.get(usersUrl)
+            .then((res) => {
+                if (!res.err) {
+                    setDb(res)
+                    setError(undefined);
+                } else {
+                    setDb(undefined);
+                    setError(res);
+                }
+                setLoading(false);
+            });
+    }, [usersUrl]);
+
     const [data, setData] = useState({
         email: "",
         password: ""
@@ -17,17 +41,20 @@ const Login = () => {
         e.preventDefault();
         const updateEmail = document.getElementById("email").value;
         const updatePassword = document.getElementById("password").value;
-        // console.log(updateEmail, updatePassword)
-
 
         if (updateEmail === "" || updatePassword === "") {
             Swal.fire(
                 'Datos incompletos',
                 'Por favor completa todos los campos.',
                 'error'
-              )
+            )
             return
         }
+
+        // Capturar usuario ingresado
+        localStorage.setItem("currentUser", updateEmail)
+        let currentUser = localStorage.getItem("currentUser")
+        // console.log(currentUser)
 
         const url = "http://localhost:3004/login";
         fetch(url, {
@@ -44,13 +71,14 @@ const Login = () => {
                         title: 'Has iniciado sesión con éxito',
                         showConfirmButton: false,
                         timer: 1000
-                      })
-                    if(resp.user.roles==="admin"){
+                    })
+
+                    if (resp.user.roles === "admin") {
                         navigate("/adminProducts")
-                    }else  if(resp.user.roles==="waiter"){
+                    } else if (resp.user.roles === "waiter") {
                         navigate("/desayunos")
-                    }else{
-                         navigate("/pedidos-chef")
+                    } else {
+                        navigate("/pedidos-chef")
                     }
                 }
             })
@@ -59,10 +87,16 @@ const Login = () => {
                     'Datos incorrectos',
                     'Por favor verifica tus credenciales.',
                     'error'
-                  )
+                )
             });
 
+            // Capturar id del usuario ingresado
+            let currentUserInfo = db.filter(el => el.email == currentUser)
+            let currentUserId = currentUserInfo[0].id
+            localStorage.setItem("currentUserId", currentUserId)
+            console.log(currentUserId)
     };
+
     return (
         <section className="login" data-testid="login-1">
             <img src={background} alt="background-chefs" className="background-chefs" />
