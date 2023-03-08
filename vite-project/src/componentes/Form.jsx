@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import Swal from 'sweetalert2'
 
 const initialForm = {
     id: undefined,
@@ -33,16 +34,45 @@ const Form = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
         e.preventDefault();
 
         if (!form.name || !form.price || !form.type) {
-            alert("Datos incompletos");
+            Swal.fire(
+                'Datos incompletos',
+                'Por favor completa todos los campos.',
+                'error'
+              )
             return;
         }
 
         if (form.id === undefined) {
             createData(form);
+            Swal.fire({ 
+                position: 'center',
+                icon: 'success',
+                title: 'El producto ha sido creado con éxito.',
+                showConfirmButton: false,
+                timer: 1000
+              })
         } else {
-            updateData(form)
+            Swal.fire({
+                title: '¿Deseas guardar cambios?',
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: '¡Sí, guardar!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    updateData(form)
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: 'Los cambios se han guardado correctamente.',
+                        showConfirmButton: false,
+                        timer: 800
+                    })
+                }
+            }) 
         }
-        handleReset();
+        handleReset(); 
     };
 
     const handleReset = (e) => {
@@ -61,7 +91,7 @@ const Form = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
                     <input className="input-class" type="text" name="type" placeholder="Tipo" onChange={handleChange} value={form.type} />
                     <input className="input-class" type="text" name="dateEntry" placeholder="Fecha de entrada" onChange={handleChange} value={form.dateEntry} />
                     <input className="btn-create" type="submit" value={dataToEdit ? "Editar" : "Crear"} />
-                    <input className="btn-clean" type="reset" value="Limpiar" onClick={handleReset} />
+                    <input className="btn-clean" type="reset" value="Limpiar" onClick={handleReset} /> 
                 </form>
             </div>
         </>

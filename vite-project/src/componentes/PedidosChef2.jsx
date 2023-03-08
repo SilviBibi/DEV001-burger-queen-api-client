@@ -61,23 +61,25 @@ const PedidosChef2 = ({ data }) => {
 
         Swal.fire({
             title: '¿Seguro que el pedido está listo?',
-            icon: 'warning',
+            icon: 'question',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
             confirmButtonText: '¡Sí, enviar!'
         }).then((result) => {
             if (result.isConfirmed) {
+                if (product.id === undefined) {
+                    console.log('El pedido no existe')
+                } else {
+                    updateData(product)
+                }
+                
                 Swal.fire(
                     '¡Enviado!',
                     'El pedido ha sido enviado con éxito.',
                     'success'
                 )
-            } if (product.id === undefined) {
-                console.log('El pedido no existe')
-            } else {
-                updateData(product)
-            }
+            } 
 
         })
     };

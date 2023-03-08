@@ -8,6 +8,7 @@ import Message from "./Message";
 import logo from '../../public/Img/logo-white.png';
 import logout from '../../public/Img/logout-logo.png';
 import './AdminProducts.css';
+import Swal from "sweetalert2";
 
 const AdminProducts = () => {
   const [db, setDb] = useState(undefined);
@@ -73,28 +74,39 @@ const AdminProducts = () => {
 
   };
 
-  const deleteData = (id) => {
-    let isDelete = window.confirm(
-      `¿Estás seguro de eliminar el producto con el id '${id}'?`
-    );
-    if (isDelete) {
-      let endpoint = `${url}/${id}`
-      let options = {
-        headers: { "content-type": "application/json" }
-      };
-      api.del(endpoint, options)
-        .then((res) => {
-          console.log(res);
-          if (!res.err) {
-            let newData = db.filter(el => el.id !== id);
-            setDb(newData);
-          } else {
-            setError(res);
-          };
-        });
-    } else {
-      return;
-    }
+  const deleteData = (id, name) => {
+    Swal.fire({
+      title: `¿Estás seguro de eliminar el producto con el nombre '${name}'?`,
+      icon: 'warning',
+      showCancelButton: true, 
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: '¡Sí, eliminar!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        let endpoint = `${url}/${id}`
+        let options = {
+          headers: { "content-type": "application/json" }
+        };
+        api.del(endpoint, options)
+          .then((res) => {
+            console.log(res);
+            if (!res.err) {
+              let newData = db.filter(el => el.id !== id);
+              setDb(newData);
+            } else {
+              setError(res);
+            };
+          });
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Producto eliminado correctamente',
+            showConfirmButton: false,
+            timer: 800
+          })
+      }
+    })
   };
 
   return (

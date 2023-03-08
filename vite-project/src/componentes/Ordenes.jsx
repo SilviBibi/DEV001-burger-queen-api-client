@@ -8,7 +8,7 @@ import Swal from 'sweetalert2'
 const Ordenes = () => {
     const { add, setAdd } = useContext(Context)
     const [db, setDb] = useState(undefined);
-    const [ order, setOrder ] = useState([])
+    const [order, setOrder] = useState([])
     const [error, setError] = useState(undefined);
     const [loading, setLoading] = useState(false);
     const [name, setName] = useState('');
@@ -35,8 +35,27 @@ const Ordenes = () => {
     }, [url]);
 
     const deleteProduct = (el) => {
-        setAdd(add.filter(elements => elements != el))
+        Swal.fire({
+            title: '¿Seguro que deseas eliminar el producto?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: '¡Sí, eliminar!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                setAdd(add.filter(elements => elements != el))
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Producto eliminado correctamente.',
+                    showConfirmButton: false,
+                    timer: 800
+                })
+            }
+        })
     }
+
     const value = add.map(el => el.value * el.qty)
     const total = value.reduce((a, b) => a + b, 0)
 
@@ -100,7 +119,7 @@ const Ordenes = () => {
                 title: 'Por favor ingresa el nombre del cliente',
                 showConfirmButton: false,
                 timer: 1000
-              })
+            })
             return;
         } else if (add.length === 0) {
             Swal.fire({
@@ -109,12 +128,12 @@ const Ordenes = () => {
                 title: 'No hay ningún producto seleccionado',
                 showConfirmButton: false,
                 timer: 1000
-              })
+            })
             return;
         } else {
             Swal.fire({
                 title: '¿Seguro que deseas enviar el pedido a cocina?',
-                icon: 'warning',
+                icon: 'question',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
@@ -136,7 +155,9 @@ const Ordenes = () => {
                         'El pedido ha sido enviado a cocina con éxito.',
                         'success',
                     )
-        }})}
+                }
+            })
+        }
     }
     // console.log(order)
 
