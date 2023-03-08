@@ -94,7 +94,7 @@ const Login = () => {
             let currentUserInfo = db.filter(el => el.email == currentUser)
             let currentUserId = currentUserInfo[0].id
             localStorage.setItem("currentUserId", currentUserId)
-            console.log(currentUserId)
+            console.log(currentUserId) 
     };
 
     return (

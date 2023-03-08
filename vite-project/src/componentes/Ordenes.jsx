@@ -140,7 +140,7 @@ const Ordenes = () => {
                 confirmButtonText: '¡Sí, enviar!'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    
+
                     let userId = localStorage.getItem("currentUserId");
 
                     createOrder({
@@ -152,8 +152,10 @@ const Ordenes = () => {
                         status: "EN PROCESO",
                         id: Date.now()
                     })
+                    
                     setAdd([])
                     setName('')
+
                     Swal.fire(
                         '¡Enviado!',
                         'El pedido ha sido enviado a cocina con éxito.',

@@ -1,16 +1,33 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import FormUsers from "./FormUsers";
 import TableUsers from "./TableUsers";
 import { helpHttp } from "../helpers/helpHttp";
 import Loader from "./Loader";
 import Message from "./Message";
 import logo from '../../public/Img/logo-white.png';
-import logout from '../../public/Img/logout-logo.png';
+import logoutImg from '../../public/Img/logout-logo.png';
 import './AdminProducts.css';
 import Swal from "sweetalert2";
  
 const AdminUsers = () => {
+
+  const navigate = useNavigate();
+    let userId = localStorage.getItem("currentUserId"); 
+
+    useEffect(() => {
+        if (!userId) {
+            navigate("/") 
+        } else {
+            console.log('Ingreso exitoso.')
+        }
+
+    });
+
+    const logout = () => {
+        localStorage.clear();
+    }
+
   const [db, setDb] = useState(undefined);
   const [dataToEdit, setDataToEdit] = useState(undefined);
   const [error, setError] = useState(undefined);
@@ -114,7 +131,7 @@ const AdminUsers = () => {
     <section className="products">
       <div className="products-elements">
         <img src={logo} alt="bq-logo" className="bq-logo2" />
-        <Link to="/" className="nav-link" href="#"><img src={logout} alt="menu-icon" className="logout-icon" /></Link>
+        <Link to="/" className="nav-link" href="#" onClick={() => logout()}><img src={logoutImg} alt="menu-icon" className="logout-icon" /></Link>
         <div className="btns-containerUsers">
           <Link to="/AdminProducts" className="btn-products-off">Productos</Link>
           <Link to="/adminUsers" className="btn-users2">Usuarios</Link>
