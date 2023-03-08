@@ -19,6 +19,7 @@ const Login = () => {
         const updatePassword = document.getElementById("password").value;
         // console.log(updateEmail, updatePassword)
 
+
         if (updateEmail === "" || updatePassword === "") {
             Swal.fire(
                 'Datos incompletos',

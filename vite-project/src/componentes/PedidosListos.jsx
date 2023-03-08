@@ -63,24 +63,24 @@ const PedidosListos = () => {
 
         Swal.fire({
             title: '¿Seguro que deseas cerrar el pedido?',
-            icon: 'warning',
+            icon: 'question',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
             confirmButtonText: '¡Sí, cerrar!'
         }).then((result) => {
             if (result.isConfirmed) {
+                if (product.id === undefined) {
+                    console.log('El pedido no existe')
+                } else {
+                    updateData(product)
+                }
                 Swal.fire(
                     '¡Enviado!',
                     'El pedido ha sido cerrado con éxito.',
                     'success'
                 )
-            } if (product.id === undefined) {
-                console.log('El pedido no existe')
-            } else {
-                updateData(product)
             }
-
         })
     };
 
