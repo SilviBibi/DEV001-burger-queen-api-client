@@ -5,10 +5,27 @@ import PedidosChef2 from "./PedidosChef2";
 import Loader from "./Loader";
 import background from '../../public/Img/background-chefs2.png';
 import logo from '../../public/Img/logo-white.png';
-import logout from '../../public/Img/logout-logo.png';
+import logoutImg from '../../public/Img/logout-logo.png';
 import { Link, useNavigate } from "react-router-dom";
 
 const PedidosChef = () => {
+
+    const navigate = useNavigate();
+    let userId = localStorage.getItem("currentUserId");
+
+    useEffect(() => {
+        if (!userId) {
+            navigate("/") 
+        } else {
+            console.log('Ingreso exitoso.')
+        }
+
+    });
+
+    const logout = () => {
+        localStorage.clear();
+    }
+
     const [db, setDb] = useState(undefined);
     const [error, setError] = useState(undefined);
     const [loading, setLoading] = useState(false);
@@ -35,7 +52,7 @@ const PedidosChef = () => {
         <>
             <img src={background} alt="background-coffe" className="background-coffe" />
             <img src={logo} alt="bq-logo" className="bq-logo2" />
-            <Link to="/" className="nav-link" href="#"><img src={logout} alt="menu-icon" className="logout-icon" /></Link>
+            <Link to="/" className="nav-link" href="#" onClick={() => logout()} ><img src={logoutImg} alt="menu-icon" className="logout-icon" /></Link>
 
             <div className="btns-container">
                 <p className="orders-title">Pedidos en proceso</p>

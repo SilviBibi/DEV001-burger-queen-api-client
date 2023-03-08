@@ -3,11 +3,26 @@ import { helpHttp } from "../helpers/helpHttp";
 import './PedidosChef.css'
 import background from '../../public/Img/background-chefs2.png';
 import logo from '../../public/Img/logo-white.png';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2'
 
 const PedidosListos = () => {
-    // console.log(data)
+    
+    const navigate = useNavigate();
+    let userId = localStorage.getItem("currentUserId");
+
+    useEffect(() => {
+        if (!userId) {
+            navigate("/") 
+        } else {
+            console.log('Ingreso exitoso.')
+        }
+
+    });
+
+    const logout = () => {
+        localStorage.clear();
+    }
 
     const [loading, setLoading] = useState(false);
     const [db, setDb] = useState([]);
@@ -109,7 +124,7 @@ const PedidosListos = () => {
                                         <Link to="/pedidos-listos" className="nav-link active" href="#">PEDIDOS</Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link to="/" className="nav-link" href="#">CERRAR SESIÓN</Link>
+                                        <Link to="/" className="nav-link" href="#" onClick={() => logout()}>CERRAR SESIÓN</Link>
                                     </li>
                                 </ul>
                             </div>

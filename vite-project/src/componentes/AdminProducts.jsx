@@ -1,16 +1,33 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Form from "./Form";
 import Table from "./Table";
 import { helpHttp } from "../helpers/helpHttp";
 import Loader from "./Loader";
 import Message from "./Message";
 import logo from '../../public/Img/logo-white.png';
-import logout from '../../public/Img/logout-logo.png';
+import logoutImg from '../../public/Img/logout-logo.png';
 import './AdminProducts.css';
 import Swal from "sweetalert2";
 
 const AdminProducts = () => {
+
+  const navigate = useNavigate();
+  let userId = localStorage.getItem("currentUserId");
+
+  useEffect(() => {
+    if (!userId) {
+      navigate("/")
+    } else {
+      console.log('Ingreso exitoso.')
+    }
+
+  });
+
+  const logout = () => {
+    localStorage.clear();
+  }
+
   const [db, setDb] = useState(undefined);
   const [dataToEdit, setDataToEdit] = useState(undefined);
   const [error, setError] = useState(undefined);
@@ -78,7 +95,7 @@ const AdminProducts = () => {
     Swal.fire({
       title: `¿Estás seguro de eliminar el producto con el nombre '${name}'?`,
       icon: 'warning',
-      showCancelButton: true, 
+      showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
       confirmButtonText: '¡Sí, eliminar!'
@@ -98,13 +115,13 @@ const AdminProducts = () => {
               setError(res);
             };
           });
-          Swal.fire({
-            position: 'center',
-            icon: 'success',
-            title: 'Producto eliminado correctamente',
-            showConfirmButton: false,
-            timer: 800
-          })
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Producto eliminado correctamente',
+          showConfirmButton: false,
+          timer: 800
+        })
       }
     })
   };
@@ -113,7 +130,7 @@ const AdminProducts = () => {
     <section className="products" data-testid="adminProducts-1">
       <div className="products-elements">
         <img src={logo} alt="bq-logo" className="bq-logo2" />
-        <Link to="/" className="nav-link" href="#"><img src={logout} alt="menu-icon" className="logout-icon" /></Link>
+        <Link to="/" className="nav-link" href="#" onClick={() => logout()} ><img src={logoutImg} alt="menu-icon" className="logout-icon" /></Link>
         <div className="btns-container2">
           <Link to="/adminProducts" className="btn-products">Productos</Link>
           <Link to="/adminUsers" className="btn-users">Usuarios</Link>

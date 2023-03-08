@@ -5,9 +5,25 @@ import { Link, useNavigate } from "react-router-dom";
 import './Desayunos.css'
 import logo from '../../public/Img/logo-white.png';
 import Ordenes from "./Ordenes";
-import { useState } from "react";
- 
+import { useState, useEffect } from "react"; 
+
 const Desayunos = (props) => {
+
+    const navigate = useNavigate();
+    let userId = localStorage.getItem("currentUserId"); 
+
+    useEffect(() => {
+        if (!userId) {
+            navigate("/") 
+        } else {
+            console.log('Ingreso exitoso.')
+        }
+
+    });
+
+    const logout = () => {
+        localStorage.clear();
+    }
 
     return (
         <>
@@ -31,7 +47,7 @@ const Desayunos = (props) => {
                                         <Link to="/pedidos-listos" className="nav-link" href="#">PEDIDOS</Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link to="/" className="nav-link" href="#">CERRAR SESIÓN</Link>
+                                        <Link to="/" className="nav-link" href="#" onClick={() => logout()}>CERRAR SESIÓN</Link> 
                                     </li>
                                 </ul>
                             </div>
@@ -58,5 +74,6 @@ const Desayunos = (props) => {
         </>
     );
 }
+//}
 
 export default Desayunos;
