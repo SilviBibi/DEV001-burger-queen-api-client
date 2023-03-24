@@ -26,7 +26,7 @@ Burger Queen API Client es una aplicación desarrollada con React, a través de 
 
 [Historia de usuario 1] Mesero/a debe poder ingresar al sistema, si el admin ya le ha asignado credenciales
 
-[![imagen-final3.png](https://i.postimg.cc/Dmkkg3B4/imagen-final3.png)](https://postimg.cc/30Bc8VM3)
+[![imagen-final3.png](https://i.postimg.cc/Dmkkg3B4/imagen-final3.png)](https://postimg.cc/30Bc8VM3) 
 
 [Historia de usuario 2] Mesero/a debe poder tomar pedido de cliente/a
 
