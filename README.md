@@ -37,11 +37,11 @@ Burger Queen API Client es una aplicación desarrollada con React, a través de 
 
 ## 3. Investigación UX: Quiénes son los usuarios y los objetivos en relación con el producto
 
-Este proyecto está dirigido para todos los trabajadores del restaurante Burger Queen con el objetivo de eficientar la toma de pedidos y actualización del estado de los mismo.
+Este proyecto está dirigido para todos los trabajadores del restaurante Burger Queen con el objetivo de eficientar la toma de pedidos y actualización del estado de los mismos.
 
 ## 4. Investigación UX: Cómo el producto soluciona los problemas/necesidades de dichos usuarios
 
-Al navegar por la aplicación, los usuarios tienen acceso a sus respectivas secciones, siendo así los meseros del restaurante tienen acceso al menú completo de platillos y bebidas para mandar ordenes a cocina. Los cocineros por su lado tienen acceso a la interfaz de productos en proceso, en cual pueden indicar cuando estos estén listos y notificar a los meseros. Finalmente, el administrador del establecimiento puede acceder a la vista admin, la cual cuenta con las credenciales para crear, editar y eliminar tanto productos como usuarios.
+Al navegar por la aplicación, los usuarios tienen acceso a sus respectivas secciones, siendo así, los meseros del restaurante tienen acceso al menú completo de platillos y bebidas con el fin de mandar ordenes a cocina. Los cocineros por su lado, tienen acceso a la interfaz de productos en proceso, en cual pueden indicar cuando estos estén listos y notificar a los meseros. Finalmente, el administrador del establecimiento puede acceder a la vista admin, la cual cuenta con las credenciales para crear, editar y eliminar tanto productos como usuarios.
 
 ## 5. Historias de usuarios
 
