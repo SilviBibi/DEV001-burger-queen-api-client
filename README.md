@@ -8,7 +8,6 @@
 * [4. Investigación UX: Cómo el producto soluciona los problemas/necesidades de dichos usuarios](#4-investigación-ux-cómo-el-producto-soluciona-los-problemasnecesidades-de-dichos-usuarios)
 * [5. Historias de usuarios](#5-historias-de-usuarios)
 * [6. Imagen del prototipo final](#6-imagen-del-prototipo-final)
-* [7. Imagen final del proyecto: Vista Mobile](#7-imagen-final-del-proyecto-vista-mobile)
 
 
 ***
@@ -23,58 +22,41 @@ Burger Queen API Client es una aplicación desarrollada con React, a través de 
 
 "Historia de usuario 1": Mesero/a debe poder ingresar al sistema, si el admin ya le ha asignado credenciales
 
-[![imagen-final2.png](https://i.postimg.cc/1tCXMZ0q/imagen-final2.png)](https://postimg.cc/mz9T2J5L)
+[![imagen-final2.png](https://i.postimg.cc/Tw1629K1/imagen-final2.png)](https://postimg.cc/SXB5Dc7b)
 
 [Historia de usuario 1] Mesero/a debe poder ingresar al sistema, si el admin ya le ha asignado credenciales
 
-[![imagen-final3.png](https://i.postimg.cc/KcCBynLg/imagen-final3.png)](https://postimg.cc/4nbm6HWJ)
+[![imagen-final3.png](https://i.postimg.cc/Dmkkg3B4/imagen-final3.png)](https://postimg.cc/30Bc8VM3)
 
 [Historia de usuario 2] Mesero/a debe poder tomar pedido de cliente/a
 
-[![imagen-final4.png](https://i.postimg.cc/9MR0xnLg/imagen-final4.png)](https://postimg.cc/9R2c0J5y)
+[![imagen-final4.png](https://i.postimg.cc/1RLfTgdw/imagen-final4.png)](https://postimg.cc/DmPv4znw)
 
 [Historia de usuario 3] Jefe de cocina debe ver los pedidos
 
 
 ## 3. Investigación UX: Quiénes son los usuarios y los objetivos en relación con el producto
 
-Este proyecto está dirigido a todas las mujeres en Latinoamérica, de 13 años en adelante.
+Este proyecto está dirigido para todos los trabajadores del restaurante Burger Queen con el objetivo de eficientar la toma de pedidos y actualización del estado de los mismo.
 
 ## 4. Investigación UX: Cómo el producto soluciona los problemas/necesidades de dichos usuarios
 
-Al navegar por la aplicación, las usuarias tienen acceso tanto a los distintos recursos educativos como acceso a nuestra red de apoyo. Brindamos herramientas diarias y fomentamos la educación sin tabúes para mejorar la calidad de vida de todas las mujeres.
+Al navegar por la aplicación, los usuarios tienen acceso a sus respectivas secciones, siendo así los meseros del restaurante tienen acceso al menú completo de platillos y bebidas para mandar ordenes a cocina. Los cocineros por su lado tienen acceso a la interfaz de productos en proceso, en cual pueden indicar cuando estos estén listos y notificar a los meseros. Finalmente, el administrador del establecimiento puede acceder a la vista admin, la cual cuenta con las credenciales para crear, editar y eliminar tanto productos como usuarios.
 
 ## 5. Historias de usuarios
 
-Ejemplo: “Yo como usuario [visitante del sitio] quiero poder VER todos lxs posts de la aplicación.”
-
-- “Yo como usuaria quiero registrarme (crear un usuario y contraseña para ingresar en la aplicación), para ser parte de la comunidad.”
-- “Yo como usuaria me gustaría crear un perfil con mis datos, imágenes e información.”
-- “Yo como usuaria quisiera ver en el Home publicaciones de otras usuarias.”
-- “Yo como usuaria me gustaría poder realizar una publicación y que otras personas puedan interactuar conmigo.”
-- “Yo como usuaria quiero tener la opción de borrar una de mis publicaciones.”
-- “Yo como usuaria quisiera poder filtrar información (publicaciones, personas, artículos, etc.) de mi interés.”
+- [Historia de usuario 1] Mesero/a debe poder ingresar al sistema, si el admin ya le ha asignado credenciales
+- [Historia de usuario 2] Mesero/a debe poder tomar pedido de cliente/a
+- [Historia de usuario 3] Jefe de cocina debe ver los pedidos
+- [Historia de usuario 4] Meserx debe ver pedidos listos para servir
+- [Historia de usuario 5] Administrador(a) de tienda debe administrar a sus trabajadorxs
+- [Historia de usuario 6] Administrador(a) de tienda debe administrar a sus productos
 
 
 ## 6. Prototipo final
 
-[![imagen-prototipo.png](https://i.postimg.cc/jSMjRb9k/imagen-prototipo.png)](https://postimg.cc/cv8WcVdQ)
-
-[![imagen-prototipo2.png](https://i.postimg.cc/BQgSC3qQ/imagen-prototipo2.png)](https://postimg.cc/KR1hZdkd)
+[![prototipos.png](https://i.postimg.cc/rFrtFG4f/prototipos.png)](https://postimg.cc/Lnmsx1NP)
 
 
-## 6. Imagen final del proyecto: Vista Mobile
-
-"Vista mobile: historia de usuario 1"
-
-[![imagen-mobile2.png](https://i.postimg.cc/zGMDMk4y/imagen-mobile2.png)](https://postimg.cc/ts3HnFqb)
-
-"Vista mobile: historia de usuario 2"
-
-[![imagen-mobile3.png](https://i.postimg.cc/wvzz842j/imagen-mobile3.png)](https://postimg.cc/v10k5zCJ)
-
-"Vista mobile: historia de usuario 3"
-
-[![imagen-mobile4.png](https://i.postimg.cc/HsRf1Ps1/imagen-mobile4.png)](https://postimg.cc/9rPxGb7L)
 
 ***
